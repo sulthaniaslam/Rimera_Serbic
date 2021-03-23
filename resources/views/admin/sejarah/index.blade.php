@@ -41,6 +41,7 @@
             <div class="card-title">Sejarah</div>
         </div>
         {{--  --}}
+        {{--  --}}
         <div class="card-body">
             <table class="table table-bordered" id="table">
                 <thead>
