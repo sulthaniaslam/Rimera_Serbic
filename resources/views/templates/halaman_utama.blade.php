@@ -252,6 +252,7 @@
                     <h2>Konsultan</h2>
                     <p>Konsultan</p>
                 </div>
+                {{--  --}}
                 
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
