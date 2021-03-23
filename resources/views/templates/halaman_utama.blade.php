@@ -172,13 +172,74 @@
                         <p>
                             {{$sejarah->sejarah}}.
                         </p>
-                        <a href="#" class="btn-learn-more">Learn More</a>
+                        {{-- <a href="#" class="btn-learn-more">Learn More</a> --}}
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <img src="{{asset('gambar')}}/{{$sejarah->photo}}" alt="" srcset="">
                     </div>
                 </div>
                 @endforeach
+               
+            </div>
+           
+           
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="section-title mt-5" data-aos="zoom-out">
+                            <h2>Struktur Organisasi</h2>
+                            <p>Struktur Organisasi</p>
+                        </div>
+                        @foreach ($tbl_so as $so)
+                        <div class="row content" data-aos="fade-up">
+                                <p>
+                                    {{-- {{$sejarah->sejarah}}. --}}
+                                    <img src="{{asset('gambar')}}/{{$so->photo}}" width="100%" alt="" srcset="">
+                                </p>
+                                {{-- <a href="#" class="btn-learn-more">Learn More</a> --}}
+                        @endforeach
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row content" data-aos="fade-up">
+                            <div class="section-title mt-5" data-aos="zoom-out">
+                                <h2>Visi Misi</h2>
+                                <p>Visi Misi</p>
+                                
+                            </div>
+                                @foreach ($tbl_visimisi as $visi_misi)
+                                <label><h3>Visi </h3></label>
+                                <div >
+                                    <p>
+                                        {{$visi_misi->visi}}.
+                                    </p>
+                                </div>
+
+                                <label class="mr-5 mt-3"> <h3>Misi</h3></label>
+                                    <div class="col-lg-12">
+                                        <ul>
+                                            <?php
+                                                $misi = explode('|', $visi_misi->misi);
+                                                foreach ($misi as $pdd) {
+                                                ?>
+                                                    <li> - {{ $pdd }}</li>
+                                                <?php
+                                                }
+                                            ?>
+                                        </ul>
+                                    </div>
+                                @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="row content" data-aos="fade-up">
+                    <div class="float-end">
+                        
+                    </div>
+                </div>
             </div>
         </section><!-- End About Section -->
 
@@ -188,10 +249,10 @@
             <div class="container">
 
                 <div class="section-title" data-aos="zoom-out">
-                    <h2>Layanan</h2>
-                    <p>What we do offer</p>
+                    <h2>Konsultan</h2>
+                    <p>Konsultan</p>
                 </div>
-
+                
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="icon-box" data-aos="zoom-in-left">
@@ -344,17 +405,14 @@
                         
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                @foreach ($tbl_konsultan as $konsultan)
-                                {{-- <p>
+                                {{-- @foreach ($tbl_konsultan as $konsultan) --}}
+                                <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                     Pelayanan mediatama web indonesia sangat memuaskan.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p> --}}
-                                <img src="{{asset('gambar')}}/{{$konsultan->photo}}" class="testimonial-img" alt="">
-                                <h3>{{$konsultan->nama_konsultan}}</h3>
-                                <h4>{{$konsultan->bidang}}</h4>
-                                <!-- <h4>Ceo &amp; Founder</h4> -->
-                                @endforeach
+                                </p>
+                                 <h4>Ceo &amp; Founder</h4>
+                                {{-- @endforeach --}}
                             </div>
                         </div><!-- End testimonial item -->
                         

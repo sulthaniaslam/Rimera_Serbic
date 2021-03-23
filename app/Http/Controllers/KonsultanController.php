@@ -36,32 +36,11 @@ class KonsultanController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->photo) {
-            $request->validate([
-                'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-
-            $photo = $request->file('photo');
-            $photo_name = time() . '.' . $photo->extension();
-            $photo->move(public_path('gambar'), $photo_name);
-
-            $store = new konsultan;
-
-            $store->nama_konsultan = $request->nama_konsultan;
-            $store->pendidikan = $request->pendidikan;
-            $store->bidang = $request->bidang;
-            $store->photo = $photo_name;
-        } else {
-            $store = new konsultan;
-
-            $store->nama_konsultan = $request->nama_konsultan;
-            $store->pendidikan = $request->pendidikan;
-            $store->bidang = $request->bidang;
-        }
+        $store = new konsultan;
+        $store->konsultan_servis = $request->konsultan_servis;
 
         $store->save();
-        $request->session()->flash('store', 'Konsultan Berhasil di tambahkan');
-        return redirect()->route('konsultan');
+        return redirect()->route('konsultan')->with('success', 'Konsultan berhasil ditambahkan');
     }
 
     /**
@@ -96,35 +75,11 @@ class KonsultanController extends Controller
      */
     public function update(Request $request, $id_konsultan)
     {
-        if ($request->photo) {
+        $update = konsultan::find($request->id_konsultan);
 
-            $request->validate([
-                'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-
-            $photo = $request->file('photo');
-            $photo_name = time() . '.' . $photo->extension();
-            $photo->move(public_path('gambar'), $photo_name);
-
-            $update = konsultan::find($request->id_konsultan);
-
-            $update->nama_konsultan = $request->nama_konsultan;
-            $update->pendidikan = $request->pendidikan;
-            $update->bidang = $request->bidang;
-            $update->photo = $photo_name;
-            $update->save();
-            $request->session()->flash('update', 'konsultan Berhasil diupdate');
-            return redirect()->route('konsultan');
-        } else {
-            $update = konsultan::find($request->id_konsultan);
-
-            $update->nama_konsultan = $request->nama_konsultan;
-            $update->pendidikan = $request->pendidikan;
-            $update->bidang = $request->bidang;
-            $update->save();
-            $request->session()->flash('update', 'konsultan Berhasil diupdate');
-            return redirect()->route('konsultan');
-        }
+        $update->konsultan_servis = $request->konsultan_servis;
+        $update->save();
+        return redirect()->route('konsultan')->with('success', 'Konsultan berhasil ditambahkan');
     }
 
     /**
@@ -138,8 +93,6 @@ class KonsultanController extends Controller
         $destroy = konsultan::find($id_konsultan);
         unlink(public_path('gambar') . '\\' . $destroy->photo);
         $destroy->delete();
-
-        session()->flash('hapus', 'konsultan Berhasil Dihapus');
-        return redirect()->route('konsultan');
+        return redirect()->route('konsultan')->with('success', 'Konsultan berhasil ditambahkan');
     }
 }

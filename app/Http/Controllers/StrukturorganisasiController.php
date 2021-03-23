@@ -49,8 +49,8 @@ class strukturorganisasiController extends Controller
         $store->photo = $photo_name;
 
         $store->save();
-        $request->session()->flash('store', 'Struktur Organisasi Berhasil Ditambahkan');
-        return redirect()->route('struktur_organisasi');
+        // $request->session()->flash('store', 'Struktur Organisasi Berhasil Ditambahkan');
+        return redirect()->route('struktur_organisasi')->with('success', 'Struktur Organisasi berhasil ditambahkan');
     }
 
     /**
@@ -97,8 +97,8 @@ class strukturorganisasiController extends Controller
 
         $update->photo = $photo_name;
         $update->save();
-        $request->session()->flash('update', 'Struktur Organisasi Berhasil Diupdate');
-        return redirect()->route('struktur_organisasi');
+        // $request->session()->flash('update', 'Struktur Organisasi Berhasil Diupdate');
+        return redirect()->route('struktur_organisasi')->with('success', 'Struktur Organisasi berhasil ditambahkan');
     }
 
     /**
@@ -111,7 +111,7 @@ class strukturorganisasiController extends Controller
     {
         $destroy =  struktur_organisasi::find($id_so);
         $destroy->delete();
-        session()->flash('hapus', 'Struktur Organisasi Berhasil Dihapus');
-        return redirect()->route('struktur_organisasi');
+        // session()->flash('hapus', 'Struktur Organisasi Berhasil Dihapus');
+        return redirect()->route('struktur_organisasi')->with('success', 'Struktur Organisasi berhasil ditambahkan');
     }
 }

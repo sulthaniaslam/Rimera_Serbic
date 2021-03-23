@@ -37,14 +37,14 @@ class visimisiController extends Controller
     public function store(Request $request)
     {
 
+        $misi = implode('|', $request->input('misi'));
         $store = new visi_misi;
 
         $store->visi = $request->visi;
-        $store->misi = $request->misi;
+        $store->misi = $misi;
 
         $store->save();
-        $request->session()->flash('store', ' Visi Misi Berhasil Ditambahkan');
-        return redirect()->route('visi_misi');
+        return redirect()->route('visi_misi')->with('success', 'Visi Misi berhasil ditambahkan');
     }
 
     /**
@@ -85,8 +85,8 @@ class visimisiController extends Controller
         $update->misi = $request->misi;
 
         $update->save();
-        $request->session()->flash('update', 'Visi Misi Berhasil diupdate');
-        return redirect()->route('visi_misi');
+        // $request->session()->flash('update', 'Visi Misi Berhasil diupdate');
+        return redirect()->route('visi_misi')->with('success', 'Visi Misi berhasil ditambahkan');
     }
 
     /**
@@ -101,6 +101,6 @@ class visimisiController extends Controller
         $destroy->delete();
 
         session()->flash('hapus', 'Visi Misi Berhasil dihapus');
-        return redirect()->route('visi_misi');
+        return redirect()->route('visi_misi')->with('success', 'Visi Misi berhasil ditambahkan');
     }
 }

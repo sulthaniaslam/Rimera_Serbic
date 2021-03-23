@@ -35,25 +35,9 @@
         <form action="{{route('edit_konsultan', $edit->id_konsultan)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="1" class="form-label">Nama Konsultan </label>
+                    <label for="1" class="form-label">konsultan service </label>
                     <input type="text" name="nama_konsultan" value="{{$edit->nama_konsultan}}" class="form-control" required>   
                 </div>            
-                
-                <div class="mb-3">
-                    <label for="1" class="form-label">Pendidikan </label>
-                    <input type="text" name="pendidikan" value="{{$edit->pendidikan}}" class="form-control" required>   
-                </div>            
-                
-                <div class="mb-3">
-                    <label for="1" class="form-label">Bidang </label>
-                    <input type="text" name="bidang" value="{{$edit->bidang}}" class="form-control" required>   
-                </div>
-                
-                <div class="mb-3">
-                    <label for="1" class="form-label">Pilih Photo</label><p>
-                    <input type="file" name="photo" id="imgInp" onchange="previewImage();">
-                  </div> <P>
-                  <img id="img-upload" style="width: 150px; height: 150px;" alt="image Upload" /><p>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <a href="{{url('sejarah')}}" class="btn btn-warning">back</a>
