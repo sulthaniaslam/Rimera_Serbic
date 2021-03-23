@@ -14,6 +14,7 @@ use App\Http\Controllers\VisimisiController;
 use App\Http\Controllers\KonsultanController;
 use App\Http\Controllers\ProfiltrainerController;
 use App\Http\Controllers\StrukturorganisasiController;
+use App\Http\Controllers\JadwalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,4 +120,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::POST('/konsultan_edit/{id_konsultan}', [KonsultanController::class, 'update'])->name('edit_konsultan');
     Route::DELETE('/konsultan_hapus/{id_konsultan}', [KonsultanController::class, 'destroy'])->name('hapus_konsultan');
     // End konsultan
+
+    // Jadwal
+    Route::get('/jadwal', [JadwalController::class, 'index'])->name('jadwal');
+    Route::get('/jadwal-tambah', [JadwalController::class, 'jadwalTambah'])->name('jadwal.tambah');
+    Route::post('/jadwal-tambah-proses', [JadwalController::class, 'jadwalTambahProses'])->name('jadwal.tambah.proses');
+    Route::get('/jadwal-edit/{id}', [JadwalController::class, 'jadwalEdit'])->name('jadwal.edit');
+    Route::post('/jadwal-edit-proses/{id}', [JadwalController::class, 'jadwalEditProses'])->name('jadwal.edit.proses');
+    Route::delete('/jadwal-hapus/{id}', [JadwalController::class, 'jadwalHapus'])->name('jadwal.hapus');
+    // End Jadwal
 });
