@@ -21,7 +21,6 @@ class ProfiltrainerController extends Controller
     }
     public function profilTambahProses(Request $request)
     {
-<<<<<<< HEAD
         $request->validate(
             [
                 'foto_trainer'      => 'required|mimes:jpg,jpeg,png',
@@ -36,26 +35,10 @@ class ProfiltrainerController extends Controller
                 'pendidikan.required'       => 'Pendidikan harus di isi !'
             ]
         );
-=======
-        if ($request->photo) {
-            $request->validate(
-                [
-                    'nama_trainer'      => 'required|min:3',
-                    'pendidikan'        => 'required'
-                ],
-                [
-                    'nama_trainer.required'     => 'Nama trainer harus di isi !',
-                    'nama_trainer.min:3'        => 'Nama trainer minimal 3 huruf !',
-                    'pendidikan.required'       => 'Pendidikan harus di isi !'
-                ]
-            );
->>>>>>> main
 
-            $pendidikan = implode('|', $request->input('pendidikan'));
-            $pengalaman_kerja = implode('|', $request->input('pengalaman_kerja'));
-            $file = $request->file('photo')->store('gambar');
+        $pendidikan = implode('|', $request->input('pendidikan'));
+        $pengalaman_kerja = implode('|', $request->input('pengalaman_kerja'));
 
-<<<<<<< HEAD
         $file = $request->file('foto_trainer')->store('gambar');
 
         DB::table('tbl_profil')->insert([
@@ -65,38 +48,6 @@ class ProfiltrainerController extends Controller
             'pengalaman_kerja'  => $pengalaman_kerja,
             'created_at'        => date('Y-m-d H:i:s')
         ]);
-=======
-            DB::table('tbl_profil')->insert([
-                'nama_trainer'      => $request->input('nama_trainer'),
-                'pendidikan'        => $pendidikan,
-                'pengalaman_kerja'  => $pengalaman_kerja,
-                'photo'             => $file,
-                'created_at'        => date('Y-m-d H:i:s')
-            ]);
-        } else {
-            $request->validate(
-                [
-                    'nama_trainer'      => 'required|min:3',
-                    'pendidikan'        => 'required'
-                ],
-                [
-                    'nama_trainer.required'     => 'Nama trainer harus di isi !',
-                    'nama_trainer.min:3'        => 'Nama trainer minimal 3 huruf !',
-                    'pendidikan.required'       => 'Pendidikan harus di isi !'
-                ]
-            );
-
-            $pendidikan = implode('|', $request->input('pendidikan'));
-            $pengalaman_kerja = implode('|', $request->input('pengalaman_kerja'));
-
-            DB::table('tbl_profil')->insert([
-                'nama_trainer'      => $request->input('nama_trainer'),
-                'pendidikan'        => $pendidikan,
-                'pengalaman_kerja'  => $pengalaman_kerja,
-                'created_at'        => date('Y-m-d H:i:s')
-            ]);
-        }
->>>>>>> main
         return redirect()->route('profil')->with('success', 'Data berhasil di simpan');
     }
     public function profilEdit($id)
@@ -108,21 +59,15 @@ class ProfiltrainerController extends Controller
     }
     public function profilEditProses(Request $request, $id)
     {
-        if ($request->photo) {
-            $pendidikan = implode('|', $request->input('pendidikan'));
-            $pengalaman_kerja = implode('|', $request->input('pengalaman_kerja'));
-            $file = $request->file('photo')->store('gambar');
+        $pendidikan = implode('|', $request->input('pendidikan'));
+        $pengalaman_kerja = implode('|', $request->input('pengalaman_kerja'));
 
-<<<<<<< HEAD
         if ($request->file('foto_trainer_baru') == null) {
-=======
->>>>>>> main
             DB::table('tbl_profil')->where('id', $id)
                 ->update([
                     'nama_trainer'          => $request->input('nama_trainer'),
                     'pendidikan'            => $pendidikan,
                     'pengalaman_kerja'      => $pengalaman_kerja,
-<<<<<<< HEAD
                     'updated_at'            => date('Y-m-d H:i:s')
                 ]);
             return redirect()->route('profil')->with('success', 'Data berhasil di ubah');
@@ -133,23 +78,11 @@ class ProfiltrainerController extends Controller
             DB::table('tbl_profil')->where('id', $id)
                 ->update([
                     'foto_trainer'          => $filebaru,
-=======
-                    'photo'                 => $file,
-                    'updated_at'            => date('Y-m-d H:i:s')
-                ]);
-        } else {
-            $pendidikan = implode('|', $request->input('pendidikan'));
-            $pengalaman_kerja = implode('|', $request->input('pengalaman_kerja'));
-
-            DB::table('tbl_profil')->where('id', $id)
-                ->update([
->>>>>>> main
                     'nama_trainer'          => $request->input('nama_trainer'),
                     'pendidikan'            => $pendidikan,
                     'pengalaman_kerja'      => $pengalaman_kerja,
                     'updated_at'            => date('Y-m-d H:i:s')
                 ]);
-<<<<<<< HEAD
             return redirect()->route('profil')->with('success', 'Data berhasil di ubah');
         }
     }
@@ -160,16 +93,6 @@ class ProfiltrainerController extends Controller
         Storage::delete($file);
         // dd($file);
         DB::table('tbl_profil')->where('id', $id)->delete();
-=======
-        }
-        return redirect()->route('profil')->with('success', 'Data berhasil di ubah');
-    }
-    public function profilHapus($id)
-    {
-        $destroy = DB::table('tbl_profil')->where('id', $id);
-        unlink(public_path('gambar') . '\\' . $destroy->photo);
-        $destroy->delete();
->>>>>>> main
         return redirect()->route('profil')->with('success', 'Data berhasil di hapus');
     }
 }
