@@ -40,7 +40,7 @@ class KonsultanController extends Controller
         $store->konsultan_servis = $request->konsultan_servis;
 
         $store->save();
-        return redirect()->route('konsultan')->with('success', 'Konsultan berhasil ditambahkan');
+        return redirect()->route('konsultan')->with('success', 'Konsultan berhasil disimpan');
     }
 
     /**
@@ -79,7 +79,7 @@ class KonsultanController extends Controller
 
         $update->konsultan_servis = $request->konsultan_servis;
         $update->save();
-        return redirect()->route('konsultan')->with('success', 'Konsultan berhasil ditambahkan');
+        return redirect()->route('konsultan')->with('success', 'Konsultan berhasil diedit');
     }
 
     /**
@@ -93,6 +93,6 @@ class KonsultanController extends Controller
         $destroy = konsultan::find($id_konsultan);
         unlink(public_path('gambar') . '\\' . $destroy->photo);
         $destroy->delete();
-        return redirect()->route('konsultan')->with('success', 'Konsultan berhasil ditambahkan');
+        return redirect()->route('konsultan')->with('success', 'Konsultan berhasil dihapus');
     }
 }

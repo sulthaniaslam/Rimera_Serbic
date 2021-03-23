@@ -242,7 +242,6 @@
                 </div>
             </div>
         </section><!-- End About Section -->
-{{--  --}}
 
         <!-- ======= Services Section ======= -->
         <section id="services" class="services" style="background-color: rgb(253, 253, 234);">
@@ -252,53 +251,18 @@
                     <h2>Konsultan</h2>
                     <p>Konsultan</p>
                 </div>
-                {{--  --}}
+                
                 
                 <div class="row">
+                    @foreach ($tbl_konsultan as $konsultan)
                     <div class="col-lg-4 col-md-6">
                         <div class="icon-box" data-aos="zoom-in-left">
                             <div class="icon"><i class="bi bi-laptop" style="color: #ff689b;"></i></div>
-                            <h4 class="title"><a href="">Web Design</a></h4>
-                            <p class="description">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p>
+                            <h4 class="title"><a href="">{{$konsultan->konsultan_servis}}</a></h4>
+                            <p class="description">{{$konsultan->konsultan_servis}}.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
-                        <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="100">
-                            <div class="icon"><i class="bi bi-laptop" style="color: #e9bf06;"></i></div>
-                            <h4 class="title"><a href="">Web Application</a></h4>
-                            <p class="description">Jasa pembuatan dan pengembangan sistem informasi berbasis web atau sistem informasi online. Cocok untuk semua jenis bidang seperti POS(Point Of Sales), Akademik, Rumah Sakit, Hotel, Travelling, Industri, dll.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mt-5 mt-lg-0 ">
-                        <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
-                            <div class="icon"><i class="bi bi-laptop" style="color: #3fcdc7;"></i></div>
-                            <h4 class="title"><a href="">Desktop Application</a></h4>
-                            <p class="description">Jasa pembuatan dan pengembangan sistem informasi berbasis Desktop. Cocok untuk semua jenis bidang. Menggunakan Bahasa Pemograman standart aplikasi dan user friendly.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-5">
-                        <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="300">
-                            <div class="icon"><i class="bi bi-phone" style="color:#41cf2e;"></i></div>
-                            <h4 class="title"><a href="">Mobile Application</a></h4>
-                            <p class="description">Jasa pembuatan dan pengembangan sistem informasi berbasis mobile. Anda Butuh aplikasi berbasis mobile seperti android. Kami siap membantu Kebutuhan sistem Anda.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mt-5">
-                        <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
-                            <div class="icon"><i class="bi bi-globe" style="color: #d6ff22;"></i></div>
-                            <h4 class="title"><a href="">Digital Marketing</a></h4>
-                            <p class="description">Merupakan jasa untuk mengelola social media dan mengiklankan social media Anda</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-5">
-                        <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="500">
-                            <div class="icon"><i class="bi bi-clock" style="color: #4680ff;"></i></div>
-                            <h4 class="title"><a href="">Training dan Pelatihan</a></h4>
-                            <p class="description">Mediatama Web menyediakan pelatihan dan training seperti Web Design, Web Programming, Android Programming, Design Grafis, Video Editing, dan Digital Marketing</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
             </div>
@@ -399,63 +363,28 @@
             <div class="container">
 
                 <div class="section-title" data-aos="zoom-out">
-                    <h2>Testimonial</h2>
-                    <p>Testimonial Pelanggan</p>
+                    <h2>Profile Trainer</h2>
+                    <p>Profile Trainer</p>
                 </div>
                 <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
                     <div class="swiper-wrapper">
                         
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                {{-- @foreach ($tbl_konsultan as $konsultan) --}}
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Pelayanan mediatama web indonesia sangat memuaskan.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                 <h4>Ceo &amp; Founder</h4>
-                                {{-- @endforeach --}}
-                            </div>
-                        </div><!-- End testimonial item -->
-                        
-                        {{-- <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
+                                @foreach ($tbl_profil as $profil)
+                                {{-- <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                     Mediatama merupakan sebuah it konsultan yang sangat membantu dalam membuat sebuah aplikasi.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/user.png" class="testimonial-img" alt="">
-                                <h3>Dinas Perumahan, Kawasan Pemukiman Indramayu</h3>
+                                </p> --}}
+                                <img src="{{asset('gambar')}}/{{$profil->photo}}" class="testimonial-img" alt="">
+                                <h3>{{$profil->nama_trainer}}</h3>
+                                <h4>{{$profil->pendidikan}}</h4>
+                                <h4>{{$profil->pengalaman_kerja}}</h4>
                                 <!-- <h4>Ceo &amp; Founder</h4> -->
+                                @endforeach
                             </div>
-                        </div> --}}
-
-                        {{-- <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Terima kasih travel kami menjadi semakin berkembang karena bantuan mediatama.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/user.png" class="testimonial-img" alt="">
-                                <h3>PT. Kemilau Nuansa Panorama</h3>
-                                <!-- <h4>Ceo &amp; Founder</h4> -->
-                            </div>
-                        </div> --}}
-
-                        {{-- <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Mediatama sangat bagus, semoga semakin maju kedepannya.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/user.png" class="testimonial-img" alt="">
-                                <h3>Honda Padang</h3>
-                                <!-- <h4>Ceo &amp; Founder</h4> -->
-                            </div>
-                        </div> --}}
+                        </div>
 
                     </div>
                     
@@ -523,15 +452,19 @@
             <div class="container">
 
                 <div class="section-title" data-aos="zoom-out">
-                    <h2>CV. MEDIATAMA WEB INDONESIA</h2>
-                    <p>Klien Kami</p>
+                    <h2>CV. RIMERA SERBIC</h2>
+                    <p>Partner Kami</p>
                 </div>
 
                 <div class="row">
+                    @foreach ($tbl_partner as $partner)
+                        
                     <div class="col-lg-2 col-md-3">
-                        <img src="assets/img/klien1.png" data-aos="fade-up" height="200px" class="img-fluid" alt="">
+                        <img src="{{asset('gambar')}}/{{$partner->logo_instansi}}" data-aos="fade-up" height="200px" class="img-fluid" alt="">
+                        <h3>{{$partner->nama_instansi}}</h3>
                     </div>
-                    <div class="col-lg-2 col-md-3">
+                    @endforeach
+                    {{-- <div class="col-lg-2 col-md-3">
                         <img src="assets/img/klien2.png" data-aos="fade-up" data-aos-delay="100" height="200px" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-2 col-md-3">
@@ -634,7 +567,7 @@
                     <div class="col-lg-2 col-md-3">
                         <img src="assets/img/klien32.png" data-aos="fade-up" data-aos-delay="300" height="200px" class="img-fluid" alt="">
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </section><!-- End Team Section -->

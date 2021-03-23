@@ -36,7 +36,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="1" class="form-label">konsultan service </label>
-                    <input type="text" name="nama_konsultan" value="{{$edit->nama_konsultan}}" class="form-control" required>   
+                    <input type="text" name="konsultan_servis" value="{{$edit->konsultan_servis}}" class="form-control" required>   
                 </div>            
                 
                 <button type="submit" class="btn btn-primary">Submit</button>

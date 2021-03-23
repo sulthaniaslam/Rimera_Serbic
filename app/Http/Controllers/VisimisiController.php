@@ -44,7 +44,7 @@ class visimisiController extends Controller
         $store->misi = $misi;
 
         $store->save();
-        return redirect()->route('visi_misi')->with('success', 'Visi Misi berhasil ditambahkan');
+        return redirect()->route('visi_misi')->with('success', 'Visi Misi berhasil disimpan');
     }
 
     /**
@@ -86,7 +86,7 @@ class visimisiController extends Controller
 
         $update->save();
         // $request->session()->flash('update', 'Visi Misi Berhasil diupdate');
-        return redirect()->route('visi_misi')->with('success', 'Visi Misi berhasil ditambahkan');
+        return redirect()->route('visi_misi')->with('success', 'Visi Misi berhasil diedit');
     }
 
     /**
@@ -101,6 +101,6 @@ class visimisiController extends Controller
         $destroy->delete();
 
         session()->flash('hapus', 'Visi Misi Berhasil dihapus');
-        return redirect()->route('visi_misi')->with('success', 'Visi Misi berhasil ditambahkan');
+        return redirect()->route('visi_misi')->with('success', 'Visi Misi berhasil dihapus');
     }
 }
