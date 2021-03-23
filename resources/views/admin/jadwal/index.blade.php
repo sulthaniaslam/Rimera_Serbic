@@ -33,7 +33,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Tanggal</th>
-                        <th>Keterangan</th>
+                        <th>Materi</th>
                         <th>#</th>
                     </tr>
                 </thead>

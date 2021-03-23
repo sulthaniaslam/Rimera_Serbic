@@ -32,7 +32,7 @@
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>ID</th>
+                        {{-- <th>ID</th> --}}
                         <th>Jenis Kontak</th>
                         <th>Kontak</th>
                         <th>#</th>
@@ -42,7 +42,7 @@
                     @foreach($tbl_kontak as $value)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $value->id }}</td>
+                        {{-- <td>{{ $value->id }}</td> --}}
                         <td>{{ $value->jenis_kontak }}</td>
                         <td>{{ $value->kontak }}</td>
                         <td>
