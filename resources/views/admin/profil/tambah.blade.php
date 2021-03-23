@@ -76,6 +76,11 @@
                         <div class="row add-pengalaman">
                             <!--  -->
                         </div>
+                        <div class="mb-3">
+                            <label for="1" class="form-label">Pilih Photo</label><p>
+                            <input type="file" name="photo" id="imgInp" onchange="previewImage();">
+                        </div> <P>
+                        <img id="img-upload" style="width: 150px; height: 150px;" alt="image Upload" /><p>
                     </div>
                 </div>
             </div>
@@ -120,4 +125,15 @@
                             </div>`);
         });
     });
+
+    function previewImage() {
+      document.getElementById("img-upload").style.display = "block";
+      var oFReader = new FileReader();
+      oFReader.readAsDataURL(document.getElementById("imgInp").files[0]);
+  
+      oFReader.onload = function(oFREvent) {
+        document.getElementById("img-upload").src = oFREvent.target.result;
+      };
+    };
+
 </script>

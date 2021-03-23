@@ -4,19 +4,6 @@
 
 <section class="content-header">
     <div class="container-fluid">
-        @if (session()->has('store'))
-        <div class="alert alert-primary">
-            {{session('store')}}
-        </div>
-        @elseif(session()->has('update'))
-        <div class="alert alert-info">
-            {{session('update')}}
-        </div>
-        @elseif(session()->has('hapus'))
-        <div class="alert alert-danger">
-            {{session('hapus')}}
-        </div>
-        @endif
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1><i class="fas fa-chalkboard-teacher"></i> Visi Misi</h1>
@@ -51,11 +38,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{-- @php
+                        dd($index);
+                    @endphp --}}
                     @foreach ($index as $i)
                     <tr class="text-center">
                         <td>{{$loop->iteration}}</td>
                         <td>{{$i->visi}}</td>
-                        <td>{{$i->misi}}</td>
+                        <td>
+                            <?php
+                            $misi = explode('|', $i->misi);
+                            foreach ($misi as $pdd) {
+                            ?>
+                                <ul>
+                                    <li>{{ $pdd }}</li>
+                                </ul>
+                            <?php
+                            }
+                            ?>
                         <td>
                             <a href="{{route('edit_visi_misi', $i->id_vm)}}" class="btn btn-sm btn-block btn-warning"><i class="fas fa-edit"></i> Edit</a>
                             <form action="{{route('hapus_visi_misi', $i->id_vm)}}" method="POST">

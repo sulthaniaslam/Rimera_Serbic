@@ -15,7 +15,7 @@ class CreateTblKonsultanTable extends Migration
     {
         Schema::create('tbl_konsultan', function (Blueprint $table) {
             $table->bigIncrements('id_konsultan');
-            $table->string('konsultan_servis', '50');
+            $table->string('konsultan_servis', '200');
             $table->timestamps();
         });
     }
