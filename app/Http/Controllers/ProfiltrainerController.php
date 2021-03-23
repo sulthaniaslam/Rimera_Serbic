@@ -23,12 +23,13 @@ class ProfiltrainerController extends Controller
     {
         $request->validate(
             [
-                'foto_trainer'      => 'required',
+                'foto_trainer'      => 'required|mimes:jpg,jpeg,png',
                 'nama_trainer'      => 'required|min:3',
                 'pendidikan'        => 'required'
             ],
             [
                 'foto_trainer.required'     => 'Foto profil harus di isi',
+                'foto_trainer.mimes'        => 'Gunakan file dengan ekstensi (jpg,jpeg,dan png)',
                 'nama_trainer.required'     => 'Nama trainer harus di isi !',
                 'nama_trainer.min:3'        => 'Nama trainer minimal 3 huruf !',
                 'pendidikan.required'       => 'Pendidikan harus di isi !'
