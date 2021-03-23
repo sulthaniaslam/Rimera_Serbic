@@ -15,6 +15,7 @@ class CreateTblProfilTable extends Migration
     {
         Schema::create('tbl_profil', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('foto_trainer');
             $table->string('nama_trainer');
             $table->string('pendidikan');
             $table->string('pengalaman_kerja');

@@ -27,6 +27,8 @@
         <div class="card-header">
             <div class="card-title">Sejarah</div>
         </div>
+        {{--  --}}
+        {{--  --}}
         <div class="card-body">
             <table class="table table-bordered" id="table">
                 <thead>
@@ -38,18 +40,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     @foreach ($sejarah as $s)
                     <tr class="text-center">
                         <td>{{$loop->iteration}}</td>
                         <td>{{$s->sejarah}}</td>
-                        <td><img src="{{asset('gambar')}}/{{$s->photo}}" class="img-thumbnail" width="100%" alt="Gambar Sejarah"></td>
+                        <td><img src="{{asset('gambar')}}/{{$s->photo}}" class="img-thumbnail" width="200px" alt="Gambar Sejarah"></td>
                         <td>
                             <a href="{{route('edit_sejarah', $s->id_sejarah)}}" class="btn btn-sm btn-block btn-warning"><i class="fas fa-edit"></i> Edit</a>
                             <form action="{{route('hapus_sejarah', $s->id_sejarah)}}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button class="btn btn-sm btn-block btn-danger"><i class="fas fa-trash"></i> Hapus</button>
+                                <button class="btn btn-sm btn-block btn-danger mt-2"><i class="fas fa-trash"></i> Hapus</button>
                             </form>
                         </td>
                     </tr>

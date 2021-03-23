@@ -176,6 +176,16 @@
                                 </p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('jadwal') }}" class="nav-link">
+                                <i class="nav-icon far fa-clock"></i>
+                                <p>
+                                    Jadwal
+                                    <!-- <span class="right badge badge-danger">New</span> -->
+                                </p>
+                            </a>
+                        </li>
                         
 
                     </ul>

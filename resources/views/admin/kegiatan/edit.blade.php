@@ -21,7 +21,6 @@
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
-    <a href="{{ route('kegiatan') }}" class="btn btn-sm btn-secondary mb-2"><i class="fas fa-angle-double-left"></i> Kembali</a>
 
     <form action="{{ route('kegiatan.edit.proses',$tbl_kegiatan->id) }}" method="post">
         @csrf
@@ -49,8 +48,8 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-sm btn-success"><i class="fas fa-plus"></i> Simpan</button>
-                <!-- <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-window-close"></i> Cancel</button> -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{{ route('kegiatan') }}" class="btn btn-warning">Back</a>
             </div>
         </div>
     </form>

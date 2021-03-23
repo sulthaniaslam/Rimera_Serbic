@@ -21,7 +21,6 @@
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
-    <a href="{{ route('profil') }}" class="btn btn-sm btn-secondary mb-2"><i class="fas fa-angle-double-left"></i> Kembali</a>
 
     <form action="{{ route('profil.edit.proses',$tbl_profil->id) }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -33,6 +32,10 @@
                 <div class="row">
                     <input type="hidden" name="id" class="form-control form-control-sm" value="{{ $tbl_profil->id }}">
                     <div class="col-sm-10">
+                        <label for="">Foto Trainer</label><br>
+                        <img src="/gambar/{{ $tbl_profil->foto_trainer }}" width="200px" alt="" srcset="">
+                        <input type="hidden" name="foto_trainer_lama" value="{{ $tbl_profil->foto_trainer }}"><br>
+                        <input type="file" name="foto_trainer_baru" id="" class="mt-2">
                         <div class="form-group">
                             <label for="">Nama Trainer</label>
                             <input type="text" name="nama_trainer" id="" class="form-control form-control-sm" value="{{ $tbl_profil->nama_trainer }}">
@@ -82,8 +85,8 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-sm btn-success"><i class="fas fa-plus"></i> Simpan</button>
-                <!-- <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-window-close"></i> Cancel</button> -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{{ route('profil') }}" class="btn btn-warning">Back</a>
             </div>
         </div>
     </form>

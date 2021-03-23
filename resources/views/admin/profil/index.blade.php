@@ -33,6 +33,7 @@
                     <tr>
                         <th>No.</th>
                         <th>ID</th>
+                        <th>Foto</th>
                         <th>Nama Trainer</th>
                         <th>Pendidikan</th>
                         <th>Pengalaman Kerja</th>
@@ -45,6 +46,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $value->id }}</td>
+                        <td><img src="/gambar/{{ $value->foto_trainer }}" width="200px" alt="profil.jpg" srcset=""></td>
                         <td>{{ $value->nama_trainer }}</td>
                         <td>
                             <?php
