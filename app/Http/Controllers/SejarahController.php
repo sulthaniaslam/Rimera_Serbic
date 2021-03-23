@@ -59,7 +59,7 @@ class SejarahController extends Controller
         }
         $store->save();
         // $request->session()->flash('store', ' Sejarah Berhasil Ditambahkan');
-        return redirect()->route('sejarah')->with('success', 'Sejarah berhasil ditambahkan');
+        return redirect()->route('sejarah')->with('success', 'Sejarah berhasil disimpan');
     }
 
     /**

@@ -4,19 +4,6 @@
 
 <section class="content-header">
     <div class="container-fluid">
-        {{-- @if (session()->has('store'))
-        <div class="alert alert-primary">
-            {{session('store')}}
-        </div>
-        @elseif(session()->has('update'))
-        <div class="alert alert-info">
-            {{session('update')}}
-        </div>
-        @elseif(session()->has('hapus'))
-        <div class="alert alert-danger">
-            {{session('hapus')}}
-        </div>
-        @endif --}}
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1><i class="fas fa-chalkboard-teacher"></i> Sejarah</h1>

@@ -35,28 +35,12 @@
         <form action="{{route('konsultan_tambah')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="1" class="form-label">Nama Konsultan </label>
-                    <input type="text" name="nama_konsultan" class="form-control" required>   
+                    <label for="1" class="form-label">Konsultan Service </label>
+                    <input type="text" name="konsultan_servis" class="form-control" required>   
                 </div>            
-                
-                <div class="mb-3">
-                    <label for="1" class="form-label">Pendidikan </label>
-                    <input type="text" name="pendidikan" class="form-control" required>   
-                </div>            
-                
-                <div class="mb-3">
-                    <label for="1" class="form-label">Bidang </label>
-                    <input type="text" name="bidang" class="form-control" required>   
-                </div>
-                
-                <div class="mb-3">
-                    <label for="1" class="form-label">Pilih Photo</label><p>
-                    <input type="file" name="photo" id="imgInp" onchange="previewImage();">
-                  </div> <P>
-                  <img id="img-upload" style="width: 150px; height: 150px;" alt="image Upload" /><p>
-                
+
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="{{url('sejarah')}}" class="btn btn-warning">back</a>
+                <a href="{{url('konsultan')}}" class="btn btn-warning">back</a>
             </form>
         </div>
 
@@ -70,19 +54,6 @@
 
     </section>
     <!-- /.content -->
-
-    <script>
-        function previewImage() {
-            document.getElementById("img-upload").style.display = "block";
-            var oFReader = new FileReader();
-            oFReader.readAsDataURL(document.getElementById("imgInp").files[0]);
-        
-            oFReader.onload = function(oFREvent) {
-              document.getElementById("img-upload").src = oFREvent.target.result;
-            };
-          };
-        </script>
-
 @endsection 
 
 

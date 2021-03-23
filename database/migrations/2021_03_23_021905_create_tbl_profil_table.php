@@ -19,6 +19,7 @@ class CreateTblProfilTable extends Migration
             $table->string('nama_trainer');
             $table->string('pendidikan');
             $table->string('pengalaman_kerja');
+            $table->string('photo', '200')->nullable();
             $table->timestamps();
         });
     }

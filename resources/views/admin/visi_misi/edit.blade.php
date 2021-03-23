@@ -42,13 +42,25 @@
                     @error('visi')<div class="alert alert-danger">{{$message}}</div>@enderror
                 </div>            
                 
-                <div class="mb-3">
+                <div class="row">
+                  <div class="col-sm-10">
                     <label for="1" class="form-label">Misi</label>
-                    <textarea name="misi" cols="10" rows="5" class="form-control" required >
-                        {{$edit->misi}}
-                    </textarea>
+                    <input type="text" name="misi[]" value="{{$edit->misi}}" class="form-control mb-3" required>
+
                       @error('misi')<div class="alert alert-danger">{{$message}}</div>@enderror
-                </div>            
+
+                  </div>
+                  <div class="col-sm-2 mt-2">
+                      <div class="form-group">
+                          <label for="" class="text-white">Add</label><br>
+                          <button type="button" class="btn btn-sm btn-success" id="add-misi"><i class="fas fa-plus"></i></button>
+                      </div>
+                  </div>    
+            </div>           
+
+            <div class="row add-misi">
+              <!--  -->
+            </div>
 
                 <button type="Update" class="btn btn-primary">Submit</button>
                 <a href="{{url('visi_misi')}}" class="btn btn-warning">back</a>
@@ -67,5 +79,27 @@
     <!-- /.content -->
   
   @endsection 
+  <script src="{{ url('assets') }}/plugins/jquery/jquery.min.js"></script>
 
+  <script>
+    $(document).ready(function() {
+      $('#add-misi').click(function (e) {
+        e.preventDefault();
+        $('.add-misi').append(` <div class="col-sm-10">
+                        <label for="1" class="form-label">Misi</label>
+                        <input type="text" name="misi[]" class="form-control mb-3" required>
+  
+                          @error('misi')<div class="alert alert-danger">{{$message}}</div>@enderror
+  
+                      </div>
+                      <div class="col-sm-2 mt-2">
+                          <div class="form-group">
+                              <label for="" class="text-white">Add</label><br>
+                              <button type="button" class="btn btn-sm btn-danger" id="add-misi"><i class="fas fa-minus"></i></button>
+                          </div>
+                      </div>`);
+      })
+    });
+  </script>
+  
 
