@@ -86,11 +86,6 @@
                         <div class="row add-pengalaman">
                             <!--  -->
                         </div>
-                        <div class="mb-3">
-                            <label for="1" class="form-label">Pilih Photo</label><p>
-                            <input type="file" name="photo" id="imgInp" onchange="previewImage();">
-                        </div> <P>
-                        <img id="img-upload" style="width: 150px; height: 150px;" alt="image Upload" /><p>
                     </div>
                 </div>
             </div>
@@ -131,7 +126,7 @@
                             </div>
                             <div class="col-sm-2">
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-sm btn-danger" id="remove-pengalaman"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="remove-pengalaman"><i class="fas fa-minus"></i></button>
                                 </div>
                             </div>`);
         });

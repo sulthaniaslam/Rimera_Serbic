@@ -37,7 +37,6 @@
                         <th>Nama Trainer</th>
                         <th>Pendidikan</th>
                         <th>Pengalaman Kerja</th>
-                        <th>Photo</th>
                         <th>#</th>
                     </tr>
                 </thead>
@@ -72,7 +71,6 @@
                             }
                             ?>
                         </td>
-                        <td><img src="{{asset('gambar')}}/{{$value->photo}}" class="img-thumbnail" width="100%" alt="Gambar Triner"></td>
                         <td>
                             <a href="{{ route('profil.edit',$value->id) }}" class="btn btn-sm btn-block btn-warning"><i class="fas fa-edit"></i> Edit</a>
                             <form action="{{ route('profil.hapus',$value->id) }}" method="post">
