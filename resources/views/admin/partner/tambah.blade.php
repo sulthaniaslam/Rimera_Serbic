@@ -40,14 +40,17 @@
                         </div>
                         <div class="form-group">
                             <label for="">Logo Instansi</label><br>
-                            <input type="file" name="logo_instansi" id="">
+                        <input type="file" name="logo_instansi" id=""><br>
+                            @error('logo_instansi')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-sm btn-success"><i class="fas fa-plus"></i> Simpan</button>
-                <a href="{{ route('partner') }}" class="btn btn-sm btn-warning"><i class="fas fa-angle-double-left"></i> Kembali</a>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{{ route('partner') }}" class="btn btn-warning">Back</a>
             </div>
         </div>
     </form>

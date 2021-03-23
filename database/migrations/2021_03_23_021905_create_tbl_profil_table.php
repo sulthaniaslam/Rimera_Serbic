@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTblJadwalTable extends Migration
+class CreateTblProfilTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateTblJadwalTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_jadwal', function (Blueprint $table) {
+        Schema::create('tbl_profil', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('tanggal');
-            $table->string('nama_jadwa');
+            $table->string('foto_trainer');
+            $table->string('nama_trainer');
+            $table->string('pendidikan');
+            $table->string('pengalaman_kerja');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateTblJadwalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_jadwal');
+        Schema::dropIfExists('tbl_profil');
     }
 }

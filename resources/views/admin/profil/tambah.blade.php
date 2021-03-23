@@ -21,7 +21,6 @@
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
-    <a href="{{ route('profil') }}" class="btn btn-sm btn-secondary mb-2"><i class="fas fa-angle-double-left"></i> Kembali</a>
 
     <form action="{{ route('profil.tambah.proses') }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -32,13 +31,24 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="form-group">
-                            <label for="">Nama Trainer</label>
-                            <input type="text" name="nama_trainer" id="" class="form-control form-control-sm">
-                            @error('nama_trainer')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">Foto</label><br>
+                                    <input type="file" name="foto_trainer" id="" class="">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <label for="">Nama Trainer</label>
+                                    <input type="text" name="nama_trainer" id="" class="form-control form-control-sm">
+                                    @error('nama_trainer')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
+                        
                         <div class="row pendidikan">
                             <div class="col-sm-10">
                                 <div class="form-group">
@@ -80,7 +90,8 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-sm btn-success"><i class="fas fa-plus"></i> Simpan</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{{ route('profil') }}" class="btn btn-warning">Back</a>
             </div>
         </div>
     </form>
