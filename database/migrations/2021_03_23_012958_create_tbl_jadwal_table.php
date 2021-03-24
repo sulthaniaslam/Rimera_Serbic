@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTblVisiMisiTable extends Migration
+class CreateTblJadwalTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTblVisiMisiTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_visi_misi', function (Blueprint $table) {
-            $table->bigIncrements('id_vm');
-            $table->text('visi');
-            $table->string('misi');
+        Schema::create('tbl_jadwal', function (Blueprint $table) {
+            $table->increments('id');
+            $table->date('tanggal');
+            $table->string('nama_jadwal');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateTblVisiMisiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_visi_misi');
+        Schema::dropIfExists('tbl_jadwal');
     }
 }

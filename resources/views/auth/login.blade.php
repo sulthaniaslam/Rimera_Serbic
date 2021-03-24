@@ -26,14 +26,14 @@
                 <sapn><b>Rimera</b>Sirebic</sapn>
             </div>
             <!-- /.login-logo -->
-            <div class="card">
+            <div class="card card-primary card-outline">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Login</p>
 
                     <form action="{{route('login')}}" method="POST" >
                         @csrf
                         <div class="input-group mb-3">
-                            <input type="text" name="email" class="form-control" placeholder="email" required>
+                            <input type="text" name="email" class="form-control" placeholder="email" required autofocus>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-envelope"></span>

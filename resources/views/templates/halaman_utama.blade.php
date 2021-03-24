@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>CV. Rimera Serbic - Index</title>
+    <title>CV. Rimera Serbic - Welcome</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/favicon.png')}}" rel="icon">
+    <link href="{{ asset('logo/logo_bersih.png')}}" rel="icon">
     <link href="{{ asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -48,7 +48,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <h1 class="text-white"><a href="index.html"><img src="{{asset('gambar/logo1.png')}}" alt="" srcset=""></a> RIMERA SERBIC</h1>
+                <h1 class="text-white"><a href="index.html"></a> RIMERA SERBIC</h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -57,9 +57,11 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
-                    <li><a class="nav-link scrollto " href="#portfolio">Kursus</a></li>
-                    <li><a class="nav-link scrollto" href="#pricing">Portofolio</a></li>
+                    <li><a class="nav-link scrollto" href="#visimisi">Visi Misi</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Konsultan</a></li>
+                    {{-- <li><a class="nav-link scrollto " href="#portfolio">Kursus</a></li> --}}
+                    <li><a class="nav-link scrollto " href="#testimonials">Profil Trainer</a></li>
+                    {{-- <li><a class="nav-link scrollto" href="#pricing">Portofolio</a></li> --}}
                     <li><a class="nav-link scrollto" href="#team">Klien Kami</a></li>
                     {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
@@ -97,8 +99,13 @@
                 <div class="carousel-container">
                     <div class="row">
                         <!-- <div class="col-sm-7"> -->
-                        <h2 class="animate__animated animate__fadeInRight">Web Design</h2>
-                        <p class="animate__animated animate__fadeInRight">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p>
+                            <center>
+                                <img src="{{ asset('gambar/logo1.png') }}" style="width: 250px;" alt="" srcset="" class="animate__animated animate__fadeInUp"><br>
+                                <h2 class="animate__animated animate__fadeInRight">
+                                    Lembaga Syariah Economic Research and Bussiness Consulting
+                                </h2>
+                            {{-- <p class="animate__animated animate__fadeInRight">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p> --}}
+                            </center>
                         <!-- </div> -->
                         <!-- <div class="col-sm-5">
               <img class="animate__animated animate__fadeInRight" src="assets/img/design-web.png" width="100%" alt="" srcset="">
@@ -161,7 +168,7 @@
 
                 <div class="section-title" data-aos="zoom-out">
                     <h2>SEJARAH</h2>
-                    <p>CV.Remiria Serabic Konsultan </p>
+                    <p>Rimera Serabic Konsultan </p>
                 </div>
 
                 @foreach ($tbl_sejarah as $sejarah)
@@ -182,7 +189,11 @@
                
             </div>
            
-           
+        </section><!-- End About Section -->
+
+
+        {{-- VIssi misi  --}}
+        <section class="visimisi" id="visimisi">
             <div class="container">
 
                 <div class="row">
@@ -241,7 +252,8 @@
                     </div>
                 </div>
             </div>
-        </section><!-- End About Section -->
+        </section>
+        {{-- End VIssi misi  --}}
 
         <!-- ======= Services Section ======= -->
         <section id="services" class="services" style="background-color: rgb(253, 253, 234);">
@@ -270,7 +282,7 @@
 
         <!-- ======= Portfolio Section ======= -->
         {{-- protofolia --}}
-        <section id="portfolio" class="portfolio">
+        {{-- <section id="portfolio" class="portfolio">
             <div class="container">
 
                 <div class="section-title" data-aos="zoom-out">
@@ -356,7 +368,7 @@
                 </div>
 
             </div>
-        </section><!-- End Portfolio Section -->
+        </section><!-- End Portfolio Section --> --}}
 
         <!-- ======= Testimonials Section ======= -->
         <section id="testimonials" class="testimonials">
@@ -367,25 +379,46 @@
                     <p>Profile Trainer</p>
                 </div>
                 <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+
+                    {{--  --}}
                     <div class="swiper-wrapper">
-                        
+                        @foreach ($tbl_profil as $profil)
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                @foreach ($tbl_profil as $profil)
                                 {{-- <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                     Mediatama merupakan sebuah it konsultan yang sangat membantu dalam membuat sebuah aplikasi.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p> --}}
-                                <img src="{{asset('gambar')}}/{{$profil->photo}}" class="testimonial-img" alt="">
+                                <img src="{{asset('gambar/'.$profil->foto_trainer)}}" class="testimonial-img" alt="">
                                 <h3>{{$profil->nama_trainer}}</h3>
-                                <h4>{{$profil->pendidikan}}</h4>
-                                <h4>{{$profil->pengalaman_kerja}}</h4>
+                                <hr>
+                                <h4>
+                                    <?php 
+                                    $pdd = explode('|',$profil->pendidikan);
+                                    foreach ($pdd as $key => $value) {
+                                        ?>
+                                        {{ $value }}<br>
+                                        <?php
+                                    }    
+                                    ?>
+                                </h4>
+                                <hr>
+                                {{-- <h4>{{$profil->pendidikan}}</h4> --}}
+                                <h4>
+                                    <?php 
+                                    $pgl = explode('|',$profil->pengalaman_kerja);
+                                    foreach ($pgl as $key => $value2) {
+                                        ?>
+                                        {{ $value2 }}<br>
+                                        <?php
+                                    }    
+                                    ?>
+                                </h4>
                                 <!-- <h4>Ceo &amp; Founder</h4> -->
-                                @endforeach
                             </div>
                         </div>
-
+                        @endforeach
                     </div>
                     
                     <div class="swiper-pagination"></div>
@@ -395,7 +428,7 @@
         </section><!-- End Testimonials Section -->
 
         <!-- ======= Pricing Section ======= -->
-        <section id="pricing" class="pricing" style="background-color: rgb(253, 253, 234);">
+        {{-- <section id="pricing" class="pricing" style="background-color: rgb(253, 253, 234);">
 
             <div class="container">
                 <div class="section-title" data-aos="zoom-out">
@@ -445,8 +478,8 @@
 
 
 
-        </section><!-- End Pricing Section -->
-
+        </section><!-- End Pricing Section --> --}}
+{{--  --}}
         <!-- ======= Team Section ======= -->
         <section id="team" class="team">
             <div class="container">

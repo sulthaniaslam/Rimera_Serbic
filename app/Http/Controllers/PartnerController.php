@@ -23,10 +23,12 @@ class PartnerController extends Controller
     {
         $request->validate(
             [
-                'nama_instansi'     => 'required'
+                'nama_instansi'     => 'required',
+                'logo_instansi'     => 'required',
             ],
             [
-                'nama_instansi.required'        => 'Nama perusahaan harus di isi !'
+                'nama_instansi.required'        => 'Nama perusahaan harus di isi !',
+                'logo_instansi.required'        => 'Logo harus di isi !',
             ]
         );
 
@@ -69,6 +71,10 @@ class PartnerController extends Controller
     }
     public function partnerHapus($id)
     {
+        $data = DB::table('tbl_partner')->where('id', $id)->first();
+        $file = $data->logo_instansi;
+        // dd($file);
+        Storage::delete($file);
         DB::table('tbl_partner')->where('id', $id)->delete();
         return redirect()->route('partner')->with('success', 'Data berhasil di hapus');
     }

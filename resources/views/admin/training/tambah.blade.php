@@ -21,7 +21,6 @@
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
-    <a href="{{ route('training') }}" class="btn btn-sm btn-secondary mb-2"><i class="fas fa-angle-double-left"></i> Kembali</a>
 
     <form action="{{ route('training.tambah.proses') }}" method="post">
         @csrf
@@ -52,9 +51,45 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-sm btn-success"><i class="fas fa-plus"></i> Simpan</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{{ route('training') }}" class="btn btn-warning">Back</a>
+
             </div>
         </div>
     </form>
 </section>
 @endsection('content')
+
+<!-- jQuery -->
+<script src="{{ url('assets') }}/plugins/jquery/jquery.min.js"></script>
+
+<script>
+var unik = 1;
+$(document).ready(function () {
+    $('#add-field').click(function(e) {
+                e.preventDefault();
+                $('.field-baru').append(`<div class="col-sm-10" id="remove-field-${unik}">
+                        <div class="form-group">
+                            <input type="text" name="judul_uk[]" id="" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="col-sm-2" id="remove-button-${unik}">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-sm btn-danger"  onclick="removeElement(${unik})"><i class="fas fa-minus"></i></button>
+                        </div>
+                    </div>`);
+                    unik++;
+
+    });
+
+
+
+});
+
+function removeElement(unik){
+    $('#remove-field-'+unik).remove()
+    $('#remove-button-'+unik).remove()
+}
+
+
+</script>
