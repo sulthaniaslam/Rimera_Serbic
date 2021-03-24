@@ -47,7 +47,7 @@
                             <form action="{{route('hapus_konsultan', $i->id_konsultan)}}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button class="btn btn-sm btn-block btn-danger"><i class="fas fa-trash"></i> Hapus</button>
+                                <button class="btn btn-sm btn-block btn-danger mt-2"><i class="fas fa-trash"></i> Hapus</button>
                             </form>
                         </td>
                     </tr>

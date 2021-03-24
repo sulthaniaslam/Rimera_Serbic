@@ -63,6 +63,9 @@
     </section>
     <!-- /.content -->
 
+<!-- jQuery -->
+<script src="{{ url('assets') }}/plugins/jquery/jquery.min.js"></script>
+
   <script>
 
   function previewImage() {
@@ -74,6 +77,9 @@
         document.getElementById("img-upload").src = oFREvent.target.result;
       };
     };
+    
+
+
   </script>
   
   @endsection 

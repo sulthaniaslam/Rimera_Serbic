@@ -75,7 +75,7 @@ $(document).ready(function () {
                     </div>
                     <div class="col-sm-2" id="remove-button-${unik}">
                         <div class="form-group">
-                            <button type="button" class="btn btn-sm btn-danger"  onclick="removeElement(${unik})"><i class="fas fa-minus"></i></button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="removeElement(${unik})"><i class="fas fa-minus"></i></button>
                         </div>
                     </div>`);
                     unik++;
