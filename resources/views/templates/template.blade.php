@@ -248,19 +248,7 @@
             $('#table').DataTable();
 
             // add-field
-            $('#add-field').click(function(e) {
-                e.preventDefault();
-                $('.field-baru').append(`<div class="col-sm-10">
-                        <div class="form-group">
-                            <input type="text" name="judul_uk[]" id="" class="form-control form-control-sm">
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <button type="button" class="btn btn-sm btn-danger" id="remove-field"><i class="fas fa-minus"></i></button>
-                        </div>
-                    </div>`);
-            });
+            
 
 
         });

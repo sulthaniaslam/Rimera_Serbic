@@ -59,3 +59,37 @@
     </form>
 </section>
 @endsection('content')
+
+<!-- jQuery -->
+<script src="{{ url('assets') }}/plugins/jquery/jquery.min.js"></script>
+
+<script>
+var unik = 1;
+$(document).ready(function () {
+    $('#add-field').click(function(e) {
+                e.preventDefault();
+                $('.field-baru').append(`<div class="col-sm-10" id="remove-field-${unik}">
+                        <div class="form-group">
+                            <input type="text" name="judul_uk[]" id="" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="col-sm-2" id="remove-button-${unik}">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-sm btn-danger"  onclick="removeElement(${unik})"><i class="fas fa-minus"></i></button>
+                        </div>
+                    </div>`);
+                    unik++;
+
+    });
+
+
+
+});
+
+function removeElement(unik){
+    $('#remove-field-'+unik).remove()
+    $('#remove-button-'+unik).remove()
+}
+
+
+</script>
