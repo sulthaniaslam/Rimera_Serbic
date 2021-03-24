@@ -16,7 +16,7 @@ class CreateTblVisiMisiTable extends Migration
         Schema::create('tbl_visi_misi', function (Blueprint $table) {
             $table->bigIncrements('id_vm');
             $table->text('visi');
-            $table->text('misi');
+            $table->string('misi');
             $table->timestamps();
         });
     }
