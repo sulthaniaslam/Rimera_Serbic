@@ -59,6 +59,7 @@
     </form>
 </section>
 @endsection('content')
+{{--  --}}
 
 <!-- jQuery -->
 <script src="{{ url('assets') }}/plugins/jquery/jquery.min.js"></script>
