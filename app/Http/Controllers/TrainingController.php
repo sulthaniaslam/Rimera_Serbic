@@ -45,7 +45,7 @@ class TrainingController extends Controller
         DB::table('tbl_training')->where('id', $id)
             ->update([
                 'judul_uk'      => $request->input('judul_uk'),
-                'update_at'     => date('Y-m-d H:i:s')
+                // 'update_at'     => date('Y-m-d H:i:s')
             ]);
 
         return redirect()->route('training')->with('success', 'Data berhasil di edit');
