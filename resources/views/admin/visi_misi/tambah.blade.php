@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1><i class="fas fa-chalkboard-teacher"></i> Tambah Data Sejarah</h1>
+            <h1><i class="fas fa-chalkboard-teacher"></i> Tambah Visi dan Misi</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -49,7 +49,7 @@
                         @error('misi')<div class="alert alert-danger">{{$message}}</div>@enderror
 
                     </div>
-                    <div class="col-sm-2 mt-2">
+                    <div class="col-sm-2">
                         <div class="form-group">
                             <label for="" class="text-white">Add</label><br>
                             <button type="button" class="btn btn-sm btn-success" id="add-misi"><i class="fas fa-plus"></i></button>
@@ -82,23 +82,31 @@
 
 <script>
   $(document).ready(function() {
+
+    var unik = 1;
+
     $('#add-misi').click(function (e) {
       e.preventDefault();
-      $('.add-misi').append(` <div class="col-sm-10">
+      $('.add-misi').append(` <div class="col-sm-10" id="remove-field-${unik}">
                       <label for="1" class="form-label">Misi</label>
                       <input type="text" name="misi[]" class="form-control mb-3" required>
 
                         @error('misi')<div class="alert alert-danger">{{$message}}</div>@enderror
 
                     </div>
-                    <div class="col-sm-2 mt-2">
+                    <div class="col-sm-2" id="remove-button-${unik}">
                         <div class="form-group">
                             <label for="" class="text-white">Add</label><br>
-                            <button type="button" class="btn btn-sm btn-danger" id="add-misi"><i class="fas fa-minus"></i></button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="removeElement(${unik})"><i class="fas fa-minus"></i></button>
                         </div>
                     </div>`);
-    })
+    });
   });
+
+  function removeElement(unik){
+    $('#remove-field-'+unik).remove()
+    $('#remove-button-'+unik).remove()
+  }
 </script>
 
 

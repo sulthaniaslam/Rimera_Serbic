@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1><i class="fas fa-chalkboard-teacher"></i> Edit Data Sejarah</h1>
+            <h1><i class="fas fa-chalkboard-teacher"></i> Edit Visi Misi</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -45,7 +45,14 @@
                 <div class="row">
                   <div class="col-sm-10">
                     <label for="1" class="form-label">Misi</label>
-                    <input type="text" name="misi[]" value="{{$edit->misi}}" class="form-control mb-3" required>
+                    <?php 
+                    $m = explode('|',$edit->misi);
+                    foreach ($m as $value_misi) {
+                    ?>
+                    <input type="text" name="misi[]" value="{{$value_misi}}" class="form-control mb-3" required>
+                    <?php
+                    }
+                    ?>
 
                       @error('misi')<div class="alert alert-danger">{{$message}}</div>@enderror
 

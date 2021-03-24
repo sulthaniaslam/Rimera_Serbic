@@ -93,11 +93,13 @@
 <script src="{{ url('assets') }}/plugins/jquery/jquery.min.js"></script>
 
 <script>
+    var unik = 1;
+
     $(document).ready(function() {
 
         $('#btn-add-pendidikan').click(function(e) {
             e.preventDefault();
-            $('.pendidikan').append(`<div class="col-sm-12"><div class="form-group">
+            $('.pendidikan').append(`<div class="col-sm-12" id="remove-field-${unik}"><div class="form-group">
                                 <input type="text" name="pendidikan[]" id="" class="form-control form-control-sm mb-2"">
                             <button class="btn btn-sm btn-danger" id="btn-remove-pendidikan"><i class="fas fa-minus"></i></button>
                         </div></div>`);
@@ -105,13 +107,18 @@
 
         $('#btn-add-pengalaman').click(function(e) {
             e.preventDefault();
-            $('.pengalaman').append(`<div class="col-sm-12"><div class="form-group">
+            $('.pengalaman').append(`<div class="col-sm-12" id="remove-button-${unik}"><div class="form-group">
                                         <input type="text" name="pengalaman_kerja[]" id="" class="form-control form-control-sm mb-2">
-                                    <button class="btn btn-sm btn-danger" id="btn-remove-pengalaman"><i class="fas fa-minus"></i></button>
+                                    <button class="btn btn-sm btn-danger" onclick="removeElement(${unik})"><i class="fas fa-minus"></i></button>
                                 </div></div>`);
         });
 
     });
+
+    function removeElement(unik){
+        $('#remove-field-'+unik).remove()
+        $('#remove-button-'+unik).remove()
+    }
 
 // function previewImage() {
 //     document.getElementById("img-upload").style.display = "block";
