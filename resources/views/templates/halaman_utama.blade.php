@@ -111,25 +111,35 @@
               <img class="animate__animated animate__fadeInRight" src="assets/img/design-web.png" width="100%" alt="" srcset="">
             </div> -->
                     </div>
-                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="background: #ef6603;">Read More</a>
                 </div>
             </div>
 
             <!-- Slide 2 -->
             <div class="carousel-item">
                 <div class="carousel-container">
-                    <h2 class="animate__animated animate__fadeInRight">Web Application</h2>
-                    <p class="animate__animated animate__fadeInRight">Jasa pembuatan dan pengembangan sistem informasi berbasis web atau sistem informasi online. Cocok untuk semua jenis bidang seperti POS(Point Of Sales), Akademik, Rumah Sakit, Hotel, Travelling, Industri, dll.</p>
-                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                    <center>
+                        <img src="{{ asset('gambar/logo1.png') }}" style="width: 250px;" alt="" srcset="" class="animate__animated animate__fadeInUp"><br>
+                        <h2 class="animate__animated animate__fadeInRight">
+                            fgfdgfgf
+                        </h2>
+                    {{-- <p class="animate__animated animate__fadeInRight">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p> --}}
+                    </center>
+                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="background: #ef6603;">Read More</a>
                 </div>
             </div>
 
             <!-- Slide 3 -->
             <div class="carousel-item">
                 <div class="carousel-container">
-                    <h2 class="animate__animated animate__fadeInRight">Desktop Application</h2>
-                    <p class="animate__animated animate__fadeInRight">Jasa pembuatan dan pengembangan sistem informasi berbasis Desktop. Cocok untuk semua jenis bidang. Menggunakan Bahasa Pemograman standart aplikasi dan user friendly.</p>
-                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                    <center>
+                        <img src="{{ asset('gambar/logo1.png') }}" style="width: 250px;" alt="" srcset="" class="animate__animated animate__fadeInUp"><br>
+                        <h2 class="animate__animated animate__fadeInRight">
+                            xxxxxxxxx
+                        </h2>
+                    {{-- <p class="animate__animated animate__fadeInRight">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p> --}}
+                    </center>
+                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="background: #ef6603;">Read More</a>
                 </div>
             </div>
 

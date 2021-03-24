@@ -89,7 +89,7 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     transition: all 0.5s;
-    background: rgba(34, 236, 102, 0.9);
+    background: linear-gradient(0deg, #c0e218 0%, #157daa 100%);
 }
 
 #header.header-transparent {
@@ -101,7 +101,7 @@ h6 {
 } */
 
 #header.header-scrolled {
-    background: #0e49b5;
+    background:linear-gradient(0deg, #c0e218 0%, #157daa 100%);
 }
 
 #header .logo h1 {
@@ -358,7 +358,7 @@ h6 {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(0deg, #c0e218 0%, #11698e 100%);
+    background: linear-gradient(0deg, #c0e218 0%, #157daa 100%);
     padding: 0;
 }
 
@@ -1583,7 +1583,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    background: #0e49b5;
+    background: linear-gradient(0deg, #c0e218 0%, #157daa 100%);
     color: #fff;
     font-size: 14px;
     text-align: center;
