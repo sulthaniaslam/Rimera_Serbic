@@ -62,7 +62,7 @@
                     {{-- <li><a class="nav-link scrollto " href="#portfolio">Kursus</a></li> --}}
                     <li><a class="nav-link scrollto " href="#testimonials">Profil Trainer</a></li>
                     {{-- <li><a class="nav-link scrollto" href="#pricing">Portofolio</a></li> --}}
-                    <li><a class="nav-link scrollto" href="#team">Klien Kami</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Partner Kami</a></li>
                     {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#">Drop Down 1</a></li>
@@ -121,7 +121,7 @@
                     <center>
                         <img src="{{ asset('gambar/logo1.png') }}" style="width: 250px;" alt="" srcset="" class="animate__animated animate__fadeInUp"><br>
                         <h2 class="animate__animated animate__fadeInRight">
-                            fgfdgfgf
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam beatae itaque quidem fugiat inventore illum error enim natus qui!
                         </h2>
                     {{-- <p class="animate__animated animate__fadeInRight">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p> --}}
                     </center>
@@ -135,7 +135,7 @@
                     <center>
                         <img src="{{ asset('gambar/logo1.png') }}" style="width: 250px;" alt="" srcset="" class="animate__animated animate__fadeInUp"><br>
                         <h2 class="animate__animated animate__fadeInRight">
-                            xxxxxxxxx
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus, labore ad distinctio illo totam!
                         </h2>
                     {{-- <p class="animate__animated animate__fadeInRight">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p> --}}
                     </center>
@@ -178,7 +178,7 @@
 
                 <div class="section-title" data-aos="zoom-out">
                     <h2>SEJARAH</h2>
-                    <p>Rimera Serabic Konsultan </p>
+                    <p>Rimera Serbic Konsultan </p>
                 </div>
 
                 @foreach ($tbl_sejarah as $sejarah)
@@ -500,13 +500,14 @@
                 </div>
 
                 <div class="row">
+                    <div class="col-lg-2 col-md-3"></div>
                     @foreach ($tbl_partner as $partner)
-                        
                     <div class="col-lg-2 col-md-3">
                         <img src="{{asset('gambar')}}/{{$partner->logo_instansi}}" data-aos="fade-up" height="200px" class="img-fluid" alt="">
-                        <h3>{{$partner->nama_instansi}}</h3>
+                        {{-- <h3>{{$partner->nama_instansi}}</h3> --}}
                     </div>
                     @endforeach
+                    <div class="col-lg-2 col-md-3"></div>
                     {{-- <div class="col-lg-2 col-md-3">
                         <img src="assets/img/klien2.png" data-aos="fade-up" data-aos-delay="100" height="200px" class="img-fluid" alt="">
                     </div>
@@ -616,72 +617,94 @@
         </section><!-- End Team Section -->
 
         <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
+        <section id="contact" class="contact" style="background-color: #fffaf7">
             <div class="container">
 
-
-                <div class="section-title" data-aos="zoom-out">
-                    <h2>Contact</h2>
-                    <p>Kontak Kami</p>
-                </div>
-
                 <div class="row">
-                    <div class="col-sm-12">
-                        <img src="assets/img/logo_mediatama.png" data-aos="fade-right" width="250px" alt="" srcset="">
-                        <p data-aos="fade-right">Mediatama Web Indonesia merupakan perusahaan <br> yang bergerak di bidang jasa pembuatan website <br> dan aplikasi yang berbasis data lainnya</p>
-                    </div>
-                </div>
-
-                <div class="row mt-5">
-
-                    <div class="col-lg-4" data-aos="fade-right">
-                        <div class="info">
-                            <div class="address">
-                                <i class="bi bi-geo-alt"></i>
-                                <h4>Lokasi:</h4>
-                                <p>JL. Dr. Sutomo No. 146 C, Kota Padang, Sumatera Barat, Indonesia</p>
-                            </div>
-
-                            <div class="email">
-                                <i class="bi bi-envelope"></i>
-                                <h4>Email:</h4>
-                                <p>support@mediatamaweb.co.id</p>
-                            </div>
-
-                            <div class="phone">
-                                <i class="bi bi-phone"></i>
-                                <h4>Call:</h4>
-                                <p>+6282170214495</p>
-                            </div>
-
+                    <div class="col-sm-6">
+                        <div class="section-title" data-aos="zoom-out">
+                            <h2>Contact</h2>
+                            <p>Kontak Kami</p>
                         </div>
+    
+                        {{-- <div class="row"> --}}
+                            {{-- <div class="col-sm-12"> --}}
+                                <img src="{{ asset('gambar/logo1.png') }}" data-aos="fade-right" width="250px" alt="" srcset="">
+                                <p data-aos="fade-right">Mediatama Web Indonesia merupakan perusahaan <br> yang bergerak di bidang jasa pembuatan website <br> dan aplikasi yang berbasis data lainnya</p>
+                            {{-- </div> --}}
+                        {{-- </div> --}}
+                        {{-- <div class="col-lg-4" data-aos="fade-right"> --}}
+                            <div class="info">
+                                <div class="address">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h4>Lokasi:</h4>
+                                    <p>JL. Dr. Sutomo No. 146 C, Kota Padang, Sumatera Barat, Indonesia</p>
+                                </div>
+    
+                                <div class="email">
+                                    <i class="bi bi-envelope"></i>
+                                    <h4>Email:</h4>
+                                    <p>support@mediatamaweb.co.id</p>
+                                </div>
+    
+                                <div class="phone">
+                                    <i class="bi bi-phone"></i>
+                                    <h4>Call:</h4>
+                                    <p>+6282170214495</p>
+                                </div>
+    
+                            </div>    
+                        {{-- </div> --}}
 
                     </div>
 
-                    <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
-
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    <div class="col-sm-6">
+                        @include('sweetalert::alert')
+                        <div class="col-lg-12 mt-5 mt-lg-0" data-aos="fade-left">
+                            <div class="section-title" data-aos="zoom-out">
+                                <h2>Formulir</h2>
+                                <p>Pendaftaran</p>
+                            </div>
+    
+                            <form action="{{ route('pendaftaran.tambah') }}" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <input type="text" name="nama" class="form-control" id="name" placeholder="Nama Lengkap" required>
                                 </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                <div class="form-group mt-3">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email" required>
                                 </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
-                        </form>
+                                <div class="row">
+                                    <div class="col-md-6 mt-3 form-group">
+                                        <input type="text" name="asal" class="form-control" id="asal" placeholder="Asal" required>
+                                    </div>
+                                    <div class="col-md-6 form-group mt-3">
+                                        <textarea name="alamat" class="form-control" id="" rows="5" placeholder="Masukkan Alamat"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6 form-group">
+                                        <input type="text" name="pekerjaan" class="form-control" id="pekerjaan" placeholder="Pekerjaan" required>
+                                    </div>
+                                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                                        <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="Masukkan No Telp" required>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <select name="nama_training" id="" class="form-control">
+                                        <option value="">-- Pilih Training --</option>
+                                        @foreach ($tbl_training as $item)
+                                        <option value="{{ $item->judul_uk }}">{{ $item->judul_uk }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+    
+                                <div class="text-center mt-3">
+                                    {{-- <button type="submit">Daftar</button> --}}
+                                    <button class="btn btn-lg" style="background-color: #ef6603; color: white; border-radius: 50px;">Daftar</button>
+                                </div>
+                            </form>
+                        </div>
 
                     </div>
 
@@ -695,11 +718,12 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container">
-            <h3>CV. Mediatama Web Indonesia</h3>
+            <h3>RIMERA SERBIC</h3>
+            <h4>Lembaga Syariah Economic Research and Bussiness Consulting</h4>
             <div class="social-links">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.facebook.com/rimera.serbic" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/rimeraserbic/" class="instagram"><i class="bx bxl-instagram"></i></a>
                 <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
