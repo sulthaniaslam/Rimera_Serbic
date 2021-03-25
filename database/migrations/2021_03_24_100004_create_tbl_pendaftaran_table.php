@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTblKegiatanTable extends Migration
+class CreateTblPendaftaranTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateTblKegiatanTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_kegiatan', function (Blueprint $table) {
+        Schema::create('tbl_pendaftaran', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('kegiatan');
-            $table->date('tanggal');
-            $table->text('keterangan');
+            $table->string('nama');
+            $table->string('email');
+            $table->string('no_telp');
+            $table->string('alamat');
+            $table->string('asal');
+            $table->string('pekerjaan');
+            $table->string('nama_training');
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ class CreateTblKegiatanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_kegiatan');
+        Schema::dropIfExists('tbl_pendaftaran');
     }
 }

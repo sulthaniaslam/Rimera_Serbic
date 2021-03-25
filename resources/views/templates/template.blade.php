@@ -87,6 +87,16 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{route('pendaftaran')}}" class="nav-link">
+                        <i class="fas fa-clipboard-check ml-1 mr-2"></i>
+                        <p>
+                            Pendaftaran
+                            <!-- <span class="right badge badge-danger">New</span> -->
+                        </p>
+                    </a>
+                </li>
            
                 <li class="nav-item">
                     <a href="{{ route('sejarah') }}" class="nav-link">

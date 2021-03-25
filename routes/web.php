@@ -15,6 +15,7 @@ use App\Http\Controllers\KonsultanController;
 use App\Http\Controllers\ProfiltrainerController;
 use App\Http\Controllers\StrukturorganisasiController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\PendaftaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,4 +130,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/jadwal-edit-proses/{id}', [JadwalController::class, 'jadwalEditProses'])->name('jadwal.edit.proses');
     Route::delete('/jadwal-hapus/{id}', [JadwalController::class, 'jadwalHapus'])->name('jadwal.hapus');
     // End Jadwal
+
+    // Pendaftaran
+    Route::post('/pendaftaran-tambah', [PendaftaranController::class, 'pendaftaranTambah'])->name('pendaftaran.tambah');
+
+    Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
+    // Route::get('/pendaftaran-edit/{id}', [PendaftaranController::class, 'pendaftaranEdit'])->name('pendaftaran.edit');
+    // Route::post('/pendaftaran-edit-proses/{id}', [PendaftaranController::class, 'pendaftaranEditProses'])->name('pendaftaran.edit.proses');
+    Route::delete('/pendaftaran-hapus/{id}', [PendaftaranController::class, 'pendaftaranHapus'])->name('pendaftaran.hapus');
+    // end Pendaftaran
 });
