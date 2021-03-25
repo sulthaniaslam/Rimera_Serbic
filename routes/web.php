@@ -16,7 +16,8 @@ use App\Http\Controllers\ProfiltrainerController;
 use App\Http\Controllers\StrukturorganisasiController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PendaftaranController;
-
+use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,9 @@ use App\Http\Controllers\PendaftaranController;
 Route::get('/', [FrontController::class, 'index'])->name('/');
 
 Auth::routes();
+
+Route::post('/pendaftaran-tambah', [FrontController::class, 'pendaftaranTambah'])->name('pendaftaran.tambah');
+
 Route::group(['middleware' => 'auth'], function () {
 
     // dashboard
@@ -132,7 +136,7 @@ Route::group(['middleware' => 'auth'], function () {
     // End Jadwal
 
     // Pendaftaran
-    Route::post('/pendaftaran-tambah', [PendaftaranController::class, 'pendaftaranTambah'])->name('pendaftaran.tambah');
+    // Route::post('/pendaftaran-tambah', [PendaftaranController::class, 'pendaftaranTambah'])->name('pendaftaran.tambah');
 
     Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
     // Route::get('/pendaftaran-edit/{id}', [PendaftaranController::class, 'pendaftaranEdit'])->name('pendaftaran.edit');
