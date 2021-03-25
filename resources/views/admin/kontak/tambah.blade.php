@@ -77,33 +77,40 @@
 <script src="{{ url('assets') }}/plugins/jquery/jquery.min.js"></script>
 
 <script>
+    var unik = 1;
+
     $(document).ready(function() {
 
         $('#btn-add-kontak').click(function(e) {
             e.preventDefault();
             $('.kontak').append(`<div class="col-sm-12">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3" id="remove-field-${unik}">
                                 <div class="form-group">
                                     <label for="">Jenis Kontak</label>
                                     <input type="text" name="jenis_kontak[]" id="" class="form-control form-control-sm">
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" id="remove-field-${unik}">
                                 <div class="form-group">
                                     <label for="">Kontak</label>
                                     <input type="text" name="kontak[]" id="" class="form-control form-control-sm">
                                 </div>
                             </div>
-                            <div class="col-sm-2">
+                            <div class="col-sm-2" id="remove-button-${unik}">
                                 <div class="form-group">
                                     <label for="" class="text-white">btn</label><br>
-                                    <button type="button" class="btn btn-sm btn-danger" id="btn-remove-kontak"><i class="fas fa-minus"></i></button>
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="removeElement(${unik})"><i class="fas fa-minus"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>`);
         });
+
+        function removeElement(unik){
+            $('#remove-field-'+unik).remove()
+            $('#remove-button-'+unik).remove()
+        }
 
     });
 </script>

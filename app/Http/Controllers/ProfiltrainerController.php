@@ -21,34 +21,66 @@ class ProfiltrainerController extends Controller
     }
     public function profilTambahProses(Request $request)
     {
-        $request->validate(
-            [
-                'foto_trainer'      => 'required|mimes:jpg,jpeg,png',
-                'nama_trainer'      => 'required|min:3',
-                'pendidikan'        => 'required'
-            ],
-            [
-                'foto_trainer.required'     => 'Foto profil harus di isi',
-                'foto_trainer.mimes'        => 'Gunakan file dengan ekstensi (jpg,jpeg,dan png)',
-                'nama_trainer.required'     => 'Nama trainer harus di isi !',
-                'nama_trainer.min:3'        => 'Nama trainer minimal 3 huruf !',
-                'pendidikan.required'       => 'Pendidikan harus di isi !'
-            ]
-        );
+        if ($request->foto_trainer) {
 
-        $pendidikan = implode('|', $request->input('pendidikan'));
-        $pengalaman_kerja = implode('|', $request->input('pengalaman_kerja'));
+            $request->validate(
+                [
+                    'foto_trainer'      => 'required|mimes:jpg,jpeg,png',
+                    'nama_trainer'      => 'required|min:3',
+                    'pendidikan'        => 'required'
+                ],
+                [
+                    'foto_trainer.required'     => 'Foto profil harus di isi',
+                    'foto_trainer.mimes'        => 'Gunakan file dengan ekstensi (jpg,jpeg,dan png)',
+                    'nama_trainer.required'     => 'Nama trainer harus di isi !',
+                    'nama_trainer.min:3'        => 'Nama trainer minimal 3 huruf !',
+                    'pendidikan.required'       => 'Pendidikan harus di isi !'
+                ]
+            );
 
-        $file = $request->file('foto_trainer')->store('gambar');
+            $pendidikan = implode('|', $request->input('pendidikan'));
+            $pengalaman_kerja = implode('|', $request->input('pengalaman_kerja'));
 
-        DB::table('tbl_profil')->insert([
-            'foto_trainer'      => $file,
-            'nama_trainer'      => $request->input('nama_trainer'),
-            'pendidikan'        => $pendidikan,
-            'pengalaman_kerja'  => $pengalaman_kerja,
-            'created_at'        => date('Y-m-d H:i:s')
-        ]);
-        return redirect()->route('profil')->with('success', 'Data berhasil di simpan');
+            $file = $request->file('foto_trainer')->store('gambar');
+
+            DB::table('tbl_profil')->insert([
+                'foto_trainer'      => $file,
+                'nama_trainer'      => $request->input('nama_trainer'),
+                'pendidikan'        => $pendidikan,
+                'pengalaman_kerja'  => $pengalaman_kerja,
+                'created_at'        => date('Y-m-d H:i:s')
+            ]);
+            return redirect()->route('profil')->with('success', 'Data berhasil di simpan');
+        } else {
+            $request->validate(
+                [
+                    // 'foto_trainer'      => 'required|mimes:jpg,jpeg,png',
+                    'nama_trainer'      => 'required|min:3',
+                    'pendidikan'        => 'required'
+                ],
+                [
+                    // 'foto_trainer.required'     => 'Foto profil harus di isi',
+                    // 'foto_trainer.mimes'        => 'Gunakan file dengan ekstensi (jpg,jpeg,dan png)',
+                    'nama_trainer.required'     => 'Nama trainer harus di isi !',
+                    'nama_trainer.min:3'        => 'Nama trainer minimal 3 huruf !',
+                    'pendidikan.required'       => 'Pendidikan harus di isi !'
+                ]
+            );
+
+            $pendidikan = implode('|', $request->input('pendidikan'));
+            $pengalaman_kerja = implode('|', $request->input('pengalaman_kerja'));
+
+            // $file = $request->file('foto_trainer')->store('gambar');
+
+            DB::table('tbl_profil')->insert([
+                // 'foto_trainer'      => $file,
+                'nama_trainer'      => $request->input('nama_trainer'),
+                'pendidikan'        => $pendidikan,
+                'pengalaman_kerja'  => $pengalaman_kerja,
+                'created_at'        => date('Y-m-d H:i:s')
+            ]);
+            return redirect()->route('profil')->with('success', 'Data berhasil di simpan');
+        }
     }
     public function profilEdit($id)
     {

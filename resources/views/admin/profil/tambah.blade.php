@@ -102,35 +102,43 @@
 <script src="{{ url('assets') }}/plugins/jquery/jquery.min.js"></script>
 
 <script>
+    var unik = 1;
+
     $(document).ready(function() {
         $('#add-pendidikan').click(function(e) {
             e.preventDefault();
-            $('.add-pendidikan').append(`<div class="col-sm-10">
+            $('.add-pendidikan').append(`<div class="col-sm-10" id="remove-field-${unik}">
                                 <div class="form-group">
                                     <input type="text" name="pendidikan[]" id="" class="form-control form-control-sm">
                                 </div>
                             </div>
-                            <div class="col-sm-2">
+                            <div class="col-sm-2" id="remove-button-${unik}">
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-sm btn-danger" id="remove-pendidikan"><i class="fas fa-minus"></i></button>
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="removeElement(${unik})"><i class="fas fa-minus"></i></button>
                                 </div>
                             </div>`);
         });
 
         $('#add-pengalaman').click(function(e) {
             e.preventDefault();
-            $('.add-pengalaman').append(`<div class="col-sm-10">
+            $('.add-pengalaman').append(`<div class="col-sm-10" id="remove-field-${unik}">
                                 <div class="form-group">
                                     <input type="text" name="pengalaman_kerja[]" id="" class="form-control form-control-sm">
                                 </div>
                             </div>
-                            <div class="col-sm-2">
+                            <div class="col-sm-2" id="remove-button-${unik}">
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-sm btn-danger" id="remove-pengalaman"><i class="fas fa-minus"></i></button>
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="removeElement(${unik})"><i class="fas fa-minus"></i></button>
                                 </div>
                             </div>`);
         });
     });
+
+    function removeElement(unik){
+        $('#remove-field-'+unik).remove()
+        $('#remove-button-'+unik).remove()
+    }
+
 
     function previewImage() {
       document.getElementById("img-upload").style.display = "block";

@@ -36,8 +36,9 @@ class KonsultanController extends Controller
      */
     public function store(Request $request)
     {
+        $konsultan = implode('|', $request->input('konsultan_servis'));
         $store = new konsultan;
-        $store->konsultan_servis = $request->konsultan_servis;
+        $store->konsultan_servis = $konsultan;
 
         $store->save();
         return redirect()->route('konsultan')->with('success', 'Konsultan berhasil disimpan');
@@ -90,8 +91,7 @@ class KonsultanController extends Controller
      */
     public function destroy($id_konsultan)
     {
-        $destroy = konsultan::find($id_konsultan);
-        unlink(public_path('gambar') . '\\' . $destroy->photo);
+        $destroy = konsultan::find($id_konsultan);;
         $destroy->delete();
         return redirect()->route('konsultan')->with('success', 'Konsultan berhasil dihapus');
     }

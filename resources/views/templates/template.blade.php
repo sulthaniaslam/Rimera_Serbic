@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ url('assets') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ url('assets') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ url('assets') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    {{--  --}}
+    <script src="//cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -237,7 +239,7 @@
     <script src="{{ url('assets') }}/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ url('assets') }}/dist/js/demo.js"></script>
-
+    
     <!-- DataTables  & Plugins -->
     <script src="{{ url('assets') }}/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="{{ url('assets') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -253,6 +255,8 @@
     <script src="{{ url('assets') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
     <script>
+        CKEDITOR.replace( 'editor1' );
+
         $(document).ready(function() {
             // datatables
             $('#table').DataTable();

@@ -41,7 +41,18 @@
                         
                     <tr class="text-center">
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$i->konsultan_servis}}</td>
+                        <td>
+                            <?php
+                            $konsultan = explode('|', $i->konsultan_servis);
+                            foreach ($konsultan as $pdd) {
+                            ?>
+                                <ul>
+                                    <li>{{ $pdd }}</li>
+                                </ul>
+                            <?php
+                            }
+                            ?>
+                        <td>
                         <td>
                             <a href="{{route('edit_konsultan', $i->id_konsultan)}}" class="btn btn-sm btn-block btn-warning"><i class="fas fa-edit"></i> Edit</a>
                             <form action="{{route('hapus_konsultan', $i->id_konsultan)}}" method="POST">
