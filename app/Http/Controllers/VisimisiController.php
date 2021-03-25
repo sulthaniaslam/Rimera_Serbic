@@ -79,10 +79,11 @@ class visimisiController extends Controller
      */
     public function update(Request $request, $id_vm)
     {
+        $misi_update = implode('|', $request->input('misi'));
         $update = visi_misi::find($request->id_vm);
 
         $update->visi = $request->visi;
-        $update->misi = $request->misi;
+        $update->misi = $misi_update;
 
         $update->save();
         // $request->session()->flash('update', 'Visi Misi Berhasil diupdate');
