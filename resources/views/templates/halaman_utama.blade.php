@@ -266,7 +266,8 @@
         {{-- End VIssi misi  --}}
 
         <!-- ======= Services Section ======= -->
-        <section id="services" class="services" style="background-color: rgb(253, 253, 234); background-image: url('logo/gambar2.png'); background-size: cover; top:10; ">
+        <section id="services" class="services" style="position:relative; background-color: rgb(253, 253, 234) ">
+            <img src="{{asset('logo/New.png')}}" alt="" style="position: absolute; width:400px; buttom:0; right: 11em; top: 7em;" >
             <div class="container">
 
                 <div class="section-title" data-aos="zoom-out">
@@ -292,115 +293,29 @@
   
         <section id="services" class="services">
             <div class="container">
-
-                <div class="section-title" data-aos="zoom-out">
+                <img src="{{asset('logo/New.png')}}" alt="" style="position: absolute; width:400px; left: 0;" >
+                <div class="section-title" data-aos="zoom-out" style="text-align: right;">
                     <h2>Training</h2>
                     <p>Training</p>
                 </div>
-                <div class="row">
-                    @foreach ($tbl_training as $training)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="icon-box" data-aos="zoom-in-left">
-                            {{-- <div class="icon"><i class="bi bi-laptop" style="color: #ff689b;"></i></div> --}}
-                            {{-- <h4 class="title"><a href="">{{$training->kode . $training->id . $training->id_b}}</a></h4> --}}
-                            <p class="description">{{$training->judul_uk}}.</p>
+                <div class="row" >
+                    <div class="col-lg-8 col-md-6 offset-md-4" >
+                        <div class="row"> 
+                        @foreach ($tbl_training as $training)
+                            <div class="col-lg-6 col-md-6">
+                                <div class="icon-box" data-aos="zoom-in-left">
+                                    {{-- <div class="icon"><i class="bi bi-laptop" style="color: #ff689b;"></i></div> --}}
+                                    {{-- <h4 class="title"><a href="">{{$training->kode . $training->id . $training->id_b}}</a></h4> --}}
+                                    <p class="description">{{$training->judul_uk}}.</p>
+                                </div>
+                            </div>
+                        @endforeach
                         </div>
                     </div>
-                    @endforeach
                 </div>
 
             </div>
         </section><!-- End Services Section -->
-
-        <!-- ======= Portfolio Section ======= -->
-        {{-- protofolia --}}
-        {{-- <section id="portfolio" class="portfolio">
-            <div class="container">
-
-                <div class="section-title" data-aos="zoom-out">
-                    <h2>Kami memberikan harga kursus yang terjangkau</h2>
-                    <p>Kursus</p>
-                </div>
-
-                <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-app">App</li>
-                    <li data-filter=".filter-card">Card</li>
-                    <li data-filter=".filter-web">Web</li>
-                </ul>
-
-                <div class="row portfolio-container" data-aos="fade-up">
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img"><img src="assets/img/msoffice.jpg" class="img-fluid" alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Microsoft Office</h4>
-                            <!-- <p>App</p> -->
-                            <a href="#" class="btn btn-sm btn-success">Join Now</a>
-                            <!-- <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-img"><img src="assets/img/designuiux.jpg" class="img-fluid" alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Design UI / UX</h4>
-                            <!-- <p>Web</p> -->
-                            <a href="#" class="btn btn-sm btn-success">Join Now</a>
-                            <!-- <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img"><img src="assets/img/design-grafis.jpg" class="img-fluid" alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Design Grafis</h4>
-                            <!-- <p>App</p> -->
-                            <a href="#" class="btn btn-sm btn-success">Join Now</a>
-                            <!-- <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-img"><img src="assets/img/web-programming.jpg" class="img-fluid" alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Web Programming</h4>
-                            <!-- <p>Card</p> -->
-                            <a href="#" class="btn btn-sm btn-success">Join Now</a>
-                            <!-- <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-img"><img src="assets/img/framework.jpg" class="img-fluid" alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Framework Laravel dan Codeigniter</h4>
-                            <!-- <p>Web</p> -->
-                            <a href="#" class="btn btn-sm btn-success">Join Now</a>
-                            <!-- <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img"><img src="assets/img/android.jpg" class="img-fluid" alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Android Programming</h4>
-                            <!-- <p>App</p> -->
-                            <a href="#" class="btn btn-sm btn-success">Join Now</a>
-                            <!-- <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a> -->
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Portfolio Section --> --}}
 
         <!-- ======= Testimonials Section ======= -->
         <section id="testimonials" class="testimonials">
