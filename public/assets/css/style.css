@@ -558,7 +558,7 @@ section {
     font-family: "Poppins", sans-serif;
 }
 
-.section-title h2::after {
+.section-title h2::before {
     content: "";
     width: 120px;
     height: 1px;
