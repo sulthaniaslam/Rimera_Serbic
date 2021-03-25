@@ -19,7 +19,7 @@ class CreateTblPendaftaranTable extends Migration
             $table->string('email');
             $table->string('no_telp');
             $table->string('alamat');
-            $table->string('asal');
+            $table->string('asal_kota');
             $table->string('pekerjaan');
             $table->string('nama_training');
             $table->timestamps();

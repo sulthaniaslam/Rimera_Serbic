@@ -44,6 +44,7 @@
               <div class="row">
                     <div class="col-sm-10">
                       <label for="1" class="form-label">Misi</label>
+                      {{-- <textarea name="" id="editor1" name="misi" class=""></textarea> --}}
                       <input type="text" name="misi[]" class="form-control mb-3" required>
 
                         @error('misi')<div class="alert alert-danger">{{$message}}</div>@enderror

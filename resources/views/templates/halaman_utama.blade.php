@@ -121,7 +121,7 @@
                     <center>
                         <img src="{{ asset('gambar/logo1.png') }}" style="width: 250px;" alt="" srcset="" class="animate__animated animate__fadeInUp"><br>
                         <h2 class="animate__animated animate__fadeInRight">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam beatae itaque quidem fugiat inventore illum error enim natus qui!
+                            syariah economic research and business consulting
                         </h2>
                     {{-- <p class="animate__animated animate__fadeInRight">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p> --}}
                     </center>
@@ -135,7 +135,7 @@
                     <center>
                         <img src="{{ asset('gambar/logo1.png') }}" style="width: 250px;" alt="" srcset="" class="animate__animated animate__fadeInUp"><br>
                         <h2 class="animate__animated animate__fadeInRight">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus, labore ad distinctio illo totam!
+                            syariah economic research and business consulting
                         </h2>
                     {{-- <p class="animate__animated animate__fadeInRight">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p> --}}
                     </center>
@@ -244,7 +244,7 @@
                                                 $misi = explode('|', $visi_misi->misi);
                                                 foreach ($misi as $pdd) {
                                                 ?>
-                                                    <li> - {{ $pdd }}</li>
+                                                    <li>{{ $pdd }}</li>
                                                 <?php
                                                 }
                                             ?>
@@ -266,7 +266,7 @@
         {{-- End VIssi misi  --}}
 
         <!-- ======= Services Section ======= -->
-        <section id="services" class="services" style="background-color: rgb(253, 253, 234);">
+        <section id="services" class="services" style="background-color: rgb(253, 253, 234); background-image: url('logo/gambar2.png'); background-size: cover; top:10; ">
             <div class="container">
 
                 <div class="section-title" data-aos="zoom-out">
@@ -279,9 +279,31 @@
                     @foreach ($tbl_konsultan as $konsultan)
                     <div class="col-lg-4 col-md-6">
                         <div class="icon-box" data-aos="zoom-in-left">
-                            <div class="icon"><i class="bi bi-laptop" style="color: #ff689b;"></i></div>
+                            {{-- <div class="icon"><i class="bi bi-laptop" style="color: #ff689b;"></i></div> --}}
                             <h4 class="title"><a href="">{{$konsultan->konsultan_servis}}</a></h4>
                             <p class="description">{{$konsultan->konsultan_servis}}.</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+  
+        <section id="services" class="services">
+            <div class="container">
+
+                <div class="section-title" data-aos="zoom-out">
+                    <h2>Training</h2>
+                    <p>Training</p>
+                </div>
+                <div class="row">
+                    @foreach ($tbl_training as $training)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="icon-box" data-aos="zoom-in-left">
+                            {{-- <div class="icon"><i class="bi bi-laptop" style="color: #ff689b;"></i></div> --}}
+                            {{-- <h4 class="title"><a href="">{{$training->kode . $training->id . $training->id_b}}</a></h4> --}}
+                            <p class="description">{{$training->judul_uk}}.</p>
                         </div>
                     </div>
                     @endforeach
@@ -389,19 +411,11 @@
                     <p>Profile Trainer</p>
                 </div>
                 <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-
-                    {{--  --}}
                     <div class="swiper-wrapper">
                         @foreach ($tbl_profil as $profil)
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                {{-- <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Mediatama merupakan sebuah it konsultan yang sangat membantu dalam membuat sebuah aplikasi.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p> --}}
                                 <img src="{{asset('gambar/'.$profil->foto_trainer)}}" class="testimonial-img" alt="">
-                                <h3>{{$profil->nama_trainer}}</h3>
                                 <hr>
                                 <h4>
                                     <?php 
