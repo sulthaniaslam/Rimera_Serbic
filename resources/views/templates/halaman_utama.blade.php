@@ -178,7 +178,7 @@
 
                 <div class="section-title" data-aos="zoom-out">
                     <h2>SEJARAH</h2>
-                    <p>Rimera Serbic Konsultan </p>
+                    <p class="text-success">Rimera Serbic Konsultan </p>
                 </div>
 
                 @foreach ($tbl_sejarah as $sejarah)
@@ -210,7 +210,7 @@
                     <div class="col-sm-6">
                         <div class="section-title mt-5" data-aos="zoom-out">
                             <h2>Struktur Organisasi</h2>
-                            <p>Struktur Organisasi</p>
+                            <p class="text-success">Struktur Organisasi</p>
                         </div>
                         @foreach ($tbl_so as $so)
                         <div class="row content" data-aos="fade-up">
@@ -226,7 +226,7 @@
                         <div class="row content" data-aos="fade-up">
                             <div class="section-title mt-5" data-aos="zoom-out">
                                 <h2>Visi Misi</h2>
-                                <p>Visi Misi</p>
+                                <p class="text-success">Visi Misi</p>
                                 
                             </div>
                                 @foreach ($tbl_visimisi as $visi_misi)
@@ -272,7 +272,7 @@
 
                 <div class="section-title" data-aos="zoom-out">
                     <h2>Konsultan</h2>
-                    <p>Konsultan</p>
+                    <p class="text-success">Konsultan</p>
                 </div>
                 
                 
@@ -296,7 +296,7 @@
                 <img src="{{asset('logo/New.png')}}" alt="" style="position: absolute; width:400px; left: 0;" >
                 <div class="section-title" data-aos="zoom-out" style="text-align: right;">
                     <h2>Training</h2>
-                    <p>Training</p>
+                    <p class="text-success">Training</p>
                 </div>
                 <div class="row" >
                     <div class="col-lg-8 col-md-6 offset-md-4" >
@@ -323,7 +323,7 @@
 
                 <div class="section-title" data-aos="zoom-out">
                     <h2>Profile Trainer</h2>
-                    <p>Profile Trainer</p>
+                    <p class="text-success">Profile Trainer</p>
                 </div>
                 <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
                     <div class="swiper-wrapper">
@@ -334,12 +334,14 @@
                                 <h2>{{ $profil->nama_trainer }}</h2>
                                 <hr>
                                 <h3>Pendidikan</h3>
-                                <h4>
+                                <h4 style="text-align: left;">
                                     <?php 
+                                    $no = 1;
                                     $pdd = explode('|',$profil->pendidikan);
                                     foreach ($pdd as $key => $value) {
                                         ?>
-                                        {{ $value }}<br>
+                                        {{ $no++ }}
+                                        {{ ')'.$value }}<br><br>
                                         <?php
                                     }    
                                     ?>
@@ -347,12 +349,14 @@
                                 <hr>
                                 {{-- <h4>{{$profil->pendidikan}}</h4> --}}
                                 <h3>Pengalaman</h3>
-                                <h4>
+                                <h4 style="text-align: justify;">
                                     <?php 
+                                    $no = 1;
                                     $pgl = explode('|',$profil->pengalaman_kerja);
                                     foreach ($pgl as $key => $value2) {
                                         ?>
-                                        {{ $value2 }}<br>
+                                        {{$no++}}
+                                        {{ ')'.$value2 }}<br><br>
                                         <?php
                                     }    
                                     ?>
@@ -428,7 +432,7 @@
 
                 <div class="section-title" data-aos="zoom-out">
                     <h2>CV. RIMERA SERBIC</h2>
-                    <p>Partner Kami</p>
+                    <p class="text-success">Partner Kami</p>
                 </div>
 
                 <div class="row">
@@ -556,7 +560,7 @@
                     <div class="col-sm-6">
                         <div class="section-title" data-aos="zoom-out">
                             <h2>Contact</h2>
-                            <p>Kontak Kami</p>
+                            <p class="text-success">Kontak Kami</p>
                         </div>
     
                         {{-- <div class="row"> --}}
@@ -588,7 +592,7 @@
     
                             </div>    
                         {{-- </div> --}}
-
+{{--  --}}
                     </div>
 
                     <div class="col-sm-6">
@@ -596,7 +600,7 @@
                         <div class="col-lg-12 mt-5 mt-lg-0" data-aos="fade-left">
                             <div class="section-title" data-aos="zoom-out">
                                 <h2>Formulir</h2>
-                                <p>Pendaftaran</p>
+                                <p class="text-success">Pendaftaran</p>
                             </div>
     
                             <form action="{{ route('pendaftaran.tambah') }}" method="post">
