@@ -559,11 +559,11 @@
                         {{-- <div class="row"> --}}
                             {{-- <div class="col-sm-12"> --}}
                                 <img src="{{ asset('gambar/logo1.png') }}" data-aos="fade-right" width="250px" alt="" srcset="">
-                                <p data-aos="fade-right">Mediatama Web Indonesia merupakan perusahaan <br> yang bergerak di bidang jasa pembuatan website <br> dan aplikasi yang berbasis data lainnya</p>
+                                <p data-aos="fade-right">RIMERA SERBIC <br> Lembaga Syariah Economic Research and Bussiness Consulting</p>
                             {{-- </div> --}}
                         {{-- </div> --}}
                         {{-- <div class="col-lg-4" data-aos="fade-right"> --}}
-                            <div class="info">
+                            <div class="info" data-aos="fade-right">
                                 <div class="address">
                                     <i class="bi bi-geo-alt"></i>
                                     <h4>Lokasi:</h4>

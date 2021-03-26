@@ -22,4 +22,18 @@ class FrontController extends Controller
         ];
         return view('templates.halaman_utama', $data);
     }
+
+    public function pendaftaranTambah(Request $request)
+    {
+        DB::table('tbl_pendaftaran')->insert([
+            'nama'          => $request->input('nama'),
+            'email'         => $request->input('email'),
+            'asal'          => $request->input('asal'),
+            'alamat'        => $request->input('alamat'),
+            'pekerjaan'     => $request->input('pekerjaan'),
+            'no_telp'       => $request->input('no_telp'),
+            'nama_training' => $request->input('nama_training')
+        ]);
+        return redirect()->route('/')->with('success', 'Anda berhasil mendaftar');
+    }
 }
