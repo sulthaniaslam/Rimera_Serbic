@@ -186,8 +186,8 @@
                 
                 <div class="row content" data-aos="fade-up">
                     <div class="col-lg-6">
-                        <p>
-                            {{$sejarah->sejarah}}.
+                        <p style="text-align: justify">
+                            {!! $sejarah->sejarah !!}
                         </p>
                         {{-- <a href="#" class="btn-learn-more">Learn More</a> --}}
                     </div>
@@ -330,8 +330,10 @@
                         @foreach ($tbl_profil as $profil)
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="{{asset('gambar/'.$profil->foto_trainer)}}" class="testimonial-img" alt="">
+                                <img src="{{asset('gambar/'.$profil->foto_trainer)}}" class="testimonial-img" alt="foto_trainer.jpg">
+                                <h2>{{ $profil->nama_trainer }}</h2>
                                 <hr>
+                                <h3>Pendidikan</h3>
                                 <h4>
                                     <?php 
                                     $pdd = explode('|',$profil->pendidikan);
@@ -344,6 +346,7 @@
                                 </h4>
                                 <hr>
                                 {{-- <h4>{{$profil->pendidikan}}</h4> --}}
+                                <h3>Pengalaman</h3>
                                 <h4>
                                     <?php 
                                     $pgl = explode('|',$profil->pengalaman_kerja);
@@ -432,7 +435,7 @@
                     <div class="col-lg-2 col-md-3"></div>
                     @foreach ($tbl_partner as $partner)
                     <div class="col-lg-2 col-md-3">
-                        <img src="{{asset('gambar')}}/{{$partner->logo_instansi}}" data-aos="fade-up" height="200px" class="img-fluid" alt="">
+                        <img src="{{asset('gambar')}}/{{$partner->logo_instansi}}" data-aos="fade-up" width="150px" class="img-fluid" alt="">
                         {{-- <h3>{{$partner->nama_instansi}}</h3> --}}
                     </div>
                     @endforeach
@@ -567,19 +570,20 @@
                                 <div class="address">
                                     <i class="bi bi-geo-alt"></i>
                                     <h4>Lokasi:</h4>
-                                    <p>JL. Dr. Sutomo No. 146 C, Kota Padang, Sumatera Barat, Indonesia</p>
+                                    <p>Jorong Supanjang, Nagari Subadak, Kecamatan Lima Kaum, Kab. Tanah Datar, 27216</p>
                                 </div>
     
                                 <div class="email">
                                     <i class="bi bi-envelope"></i>
                                     <h4>Email:</h4>
-                                    <p>support@mediatamaweb.co.id</p>
+                                    <p>rimeraserbic@gmail.com</p>
                                 </div>
     
                                 <div class="phone">
                                     <i class="bi bi-phone"></i>
                                     <h4>Call:</h4>
-                                    <p>+6282170214495</p>
+                                    <p>0852-3323-5460-0</p>
+                                    <p>0812-1792-5209</p>
                                 </div>
     
                             </div>    
@@ -658,14 +662,14 @@
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
             <div class="copyright">
-                &copy; Copyright <strong><span>Sulthani_Aslam</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>CV. MEDIATAMA WEB INDONESIA</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
             </div>
         </div>
     </footer><!-- End Footer -->

@@ -20,6 +20,8 @@ class FrontController extends Controller
             'tbl_training' => DB::table('tbl_training')->get(),
             'tbl_kegiatan' => DB::table('tbl_kegiatan')->get(),
         ];
+
+        // dd($data['tbl_profil']);
         return view('templates.halaman_utama', $data);
     }
 
