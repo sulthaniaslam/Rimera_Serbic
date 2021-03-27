@@ -574,20 +574,25 @@
                                 <div class="address">
                                     <i class="bi bi-geo-alt"></i>
                                     <h4>Lokasi:</h4>
-                                    <p>Jorong Supanjang, Nagari Subadak, Kecamatan Lima Kaum, Kab. Tanah Datar, 27216</p>
+                                    <p>{{ $tbl_kontak1->kontak }}</p>
+                                    {{-- <p>Jorong Supanjang, Nagari Subadak, Kecamatan Lima Kaum, Kab. Tanah Datar, 27216</p> --}}
                                 </div>
     
                                 <div class="email">
                                     <i class="bi bi-envelope"></i>
                                     <h4>Email:</h4>
-                                    <p>rimeraserbic@gmail.com</p>
+                                    <p>{{ $tbl_kontak2->kontak }}</p>
+                                    {{-- <p>rimeraserbic@gmail.com</p> --}}
                                 </div>
     
                                 <div class="phone">
                                     <i class="bi bi-phone"></i>
                                     <h4>Call:</h4>
-                                    <p>0852-3323-5460-0</p>
-                                    <p>0812-1792-5209</p>
+                                    @foreach ($tbl_kontak3 as $item)
+                                        <p>{{ $item->kontak }}</p>
+                                    @endforeach
+                                    {{-- <p>0852-3323-5460-0</p>
+                                    <p>0812-1792-5209</p> --}}
                                 </div>
     
                             </div>    

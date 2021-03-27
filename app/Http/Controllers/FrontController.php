@@ -19,6 +19,9 @@ class FrontController extends Controller
             'tbl_profil' => DB::table('tbl_profil')->get(),
             'tbl_training' => DB::table('tbl_training')->get(),
             'tbl_kegiatan' => DB::table('tbl_kegiatan')->get(),
+            'tbl_kontak1' => DB::table('tbl_kontak')->where('jenis_kontak', 'Lokasi')->first(),
+            'tbl_kontak2' => DB::table('tbl_kontak')->where('jenis_kontak', 'Email')->first(),
+            'tbl_kontak3' => DB::table('tbl_kontak')->where('jenis_kontak', 'No telp')->get(),
         ];
 
         // dd($data['tbl_profil']);
