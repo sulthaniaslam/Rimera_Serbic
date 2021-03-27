@@ -575,6 +575,7 @@
                                     <i class="bi bi-geo-alt"></i>
                                     <h4>Lokasi:</h4>
                                     <p>{{ $tbl_kontak1->kontak }}</p>
+                                    {{--  --}}
                                     {{-- <p>Jorong Supanjang, Nagari Subadak, Kecamatan Lima Kaum, Kab. Tanah Datar, 27216</p> --}}
                                 </div>
     
